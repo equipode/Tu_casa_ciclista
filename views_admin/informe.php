@@ -1,3 +1,7 @@
+<?php 
+  include "../controllers/controller_consultas_backend.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +46,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Titulo Página</h1>
+            <h1>Productos Informes</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">titulo Corto</li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item active"><a href="productos_listados.php">Listado</a></li>
             </ol>
           </div>
         </div>
@@ -55,9 +59,130 @@
     </section>
 
     <!-- Main content -->
+
+<?php
+  $objDB = new ExtraerDatos();
+
+  $prods = array();
+
+  if(isset($_POST["txtBuscar"])){ //se filtro algo
+    $prods = $objDB->productoPorIdCoinc($_POST["txtBuscar"]); //filtramos coincidencia
+  }else{
+    $prods = $objDB->listadoProductos(); //traemos todo
+  }
+
+
+?>
+
     <section class="content">
 
-      
+      <!-- ZONA ENCABEZADO DE IMPRESION SOLAMENTE -->
+      <div class="row d-none d-print-block"><!-- fila contenedora -->
+        <div class="col-md-12"> <!-- fin columna de contenido -->
+        
+          <div class="card">                      
+            <!-- Para controles de formularios siempre usar etiqueta FORM -->
+            <div class="card-body">
+              <img src="../imgs/infotep2.jpg" width="100%">
+            </div>  <!-- /.fin card-body -->
+          </div>
+        
+        </div> <!-- ./ fin col -->
+      </div><!-- ./ fin row -->
+
+      <div class="row d-print-none"><!-- fila contenedora -->
+        <div class="col-md-12"> <!-- fin columna de contenido -->
+        <form name="frm_filtro" id="frm_filtro" method="post" action="productos_informes.php">
+            <div class="card">
+              <div class="card-header bg-indigo">
+                <h3 class="card-title">Filtrar Datos </h3>
+              </div>
+              <!-- /.card-header -->
+              
+              <!-- Para controles de formularios siempre usar etiqueta FORM -->
+              <div class="card-body">
+                <label for="txtBuscar">Nombre del dispositivo</label>
+                <div class="input-group input-group-sm">                  
+                  <input type="text" id="txtBuscar" name="txtBuscar" class="form-control">
+                  <span class="input-group-append">
+                    <button type="submit" class="btn btn-success">Buscar</button>
+                    <a href="informe.php" class="btn btn-info">Ver Todo</a>
+                  </span>
+                </div>
+              </div>  <!-- /.fin card-body -->              
+
+            </div>
+          </form>
+        </div> <!-- ./ fin col -->
+      </div><!-- ./ fin row -->
+
+      <div class="row">
+         <!-- COLUMNA DE TABLA DE DATOS  -->
+        <div class="col-md-12"><!--  -->
+
+          <div class="card">
+              <div class="card-header bg-indigo">
+                <h3 class="card-title">Datos en Tabla</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <?php if($prods){ //verifica si hay registros de datos ?>
+                <a href="#" id="btn_print" class="btn btn-info btn-xs float-right d-print-none"><i class="fa fa-print"></i>Imprimir</a>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">REF</th>
+                      <th>NOMBRE</th>
+                      <th>CANTIDAD</th>
+                      <th>VALOR COMERCIAL</th>
+                      <th>EDAD</th>
+                      <th>FOTO</th>
+                      <th style="width: 40px">Accion</th>
+                    </tr>
+                  </thead>
+                 
+                  <tbody>
+                    <?php 
+                    //RECORRIDO DE ELEMENTOS DE FORMA REPETITIVA
+                    foreach ($prods as $rows) {
+                                          
+                    ?>
+                    <tr>
+                      <td><?php echo $rows["referencia"]; ?></td>
+                      <td><?php echo $rows["nombre"]; ?></td>
+                      <td><?php echo $rows["cantidad"]; ?></td>
+                      <td><?php echo $rows["valorcomercial"]; ?></td>  
+                      <td>GUETTE</td>
+                      <td><img src="../<?php echo $rows['foto']; ?>" width="50" ></td>
+                      <td>
+                        
+                        <a href="productos_editar.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                        <a href="productos_eliminar.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+
+                      </td>
+                    </tr>  
+                    <?php 
+                    }//FIN CICLO REPETITIVO DE DATOS
+                    ?>                  
+                  </tbody>
+
+                </table>
+                <?php 
+              }else{
+                echo "<div class='alert alert-secondary'>
+                      No hay datos de productos. Registre uno<br>
+                      <a href='productos_crear.php' class='btn btn-info' >Registro</a> 
+                      </div>
+                      ";
+              }
+                 ?>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+        </div><!-- Fin contenido TABLA DE DATO -->
+      </div>
 
 
     </section>
@@ -79,6 +204,9 @@
 </div>
 <!-- ./wrapper -->
 
+
+
+
 <!-- jQuery -->
 <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -94,6 +222,14 @@
 <script src="../templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
+
+<script type="text/javascript">
+  
+  $("#btn_print").click(function(){ //Capturamos el click
+    window.print();
+  })
+
+</script>
 
 </body>
 </html>
