@@ -1,6 +1,3 @@
-<?php 
-  include "../controllers/controller_consultas_backend.php";
-?>
 <!DOCTYPE html>
 <html>
 
@@ -21,14 +18,14 @@
 
 <body class="sidebar-collapse sidebar-mini">
 
-    <?php include "includes2/config.php"; ?>
+    <?php include "includes/config.php"; ?>
 
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
             <?php 
-      include "includes2/header.php";
+      include "includes/header.php";
     ?>
         </nav>
         <!-- /.navbar -->
@@ -36,7 +33,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
             <?php 
-    include "includes2/lateralaside.php";
+    include "includes/lateralaside.php";
      ?>
         </aside>
 
@@ -47,86 +44,45 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Información del cliente</h1>
+                            <h1>Titulo Página</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Clientes</li>
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">titulo Corto</li>
                             </ol>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
 
+
             <!-- Main content -->
-
-
             <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form role="form" name="frm_prods" id="frm_prods" method="POST"
+                            action="eliminar_productos.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
 
-        <?php 
-            $objDB = new ExtraerDatos();
+                            <div class="card-body">
+                                Usted va a eliminar el producto con nombre
+                                <b><?php echo $producto[0]['nombre']; ?></b><br>
+                                Presione <b>Aceptar</b> para eliminar. <br><br>
 
-            $clienteslista = array();
-            $clienteslista = $objDB->listadoProductos();
-
-            if($clienteslista){
-
-              echo "<div class='row'>";
-              
-            //proceso para mostrar listas de datos
-            foreach ($clienteslista as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
-        ?>  
-        <div class="col-12 col-sm-6 col-md-6">
-                <div class="card bg-light">
-                    <div class="card-header text-muted border-bottom-0">
-                        Digital Strategist
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="row">
-                            <div class="col-7">
-                                <h2 class="lead"><b><?php echo $rows["nombre"]; ?></b></h2> <!--en esta parte va el nombre -->
-                                <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist /
-                                    Coffee Lover </p>
-                                <ul class="ml-4 mb-0 fa-ul text-muted">
-                                    <li class="small"><span class="fa-li"><i
-                                                class="fas fa-lg fa-building"></i></span> Dirección: <?php echo $rows["descripcion"]; ?></li>
-                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telefono #: <?php echo $rows["valorcomercial"]; ?></li>
-                                </ul>
+                                <b>Importante</b>. Una vez eliminado no podra recuperarse.
                             </div>
-                            <div class="col-5 text-center">
-                                <img src="../<?php echo $rows['foto']; ?>" alt=""
-                                    class="img-circle img-fluid">
+
+                            <div class="card-footer">
+                                <button type="submit" id="btn_actualizar" class="btn btn-success">Aceptar</button>
+                                <a href="productos_admin.php" class="btn btn-default">Cancelar</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="text-right">
-                            <a href="#" class="btn btn-sm bg-teal">
-                                <i class="fas fa-comments"></i>
-                            </a>
-                            <a href="clientes_detalles.php?c=<?php  echo $rows['id'];?>" class="btn btn-sm btn-primary">
-                                <i class="fas fa-user"></i> Perfil
-                            </a>
-                        </div>
+
+                            <input type="hidden" name="txt_codprod" id="txt_codprod"
+                                value="<?php echo $producto[0]['cod']; ?>">
+
+                        </form> <!-- /.fin Form -->
                     </div>
                 </div>
-            </div>
-        
-        <?php
-            }//Fin del foreach
-
-            echo "</div>";
-
-            }else{
-              echo "No hay datos o no se pudo conectar a la fuente";
-            }
-            
-            
-            ?>
-
-
-                
 
 
             </section>
@@ -136,7 +92,7 @@
 
         <footer class="main-footer">
             <?php 
-      include "includes2/footer.php";
+      include "includes/footer.php";
      ?>
         </footer>
 

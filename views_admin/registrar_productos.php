@@ -143,7 +143,7 @@
             ?>
 
 
-                            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="productos_crear.php"
+                            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="registrar_productos.php"
                                 enctype="multipart/form-data">
                                 <div class="card-body">
 

@@ -56,7 +56,41 @@
 
     <!-- Main content -->
     <section class="content">
-
+    <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card bg-light">
+                        <div class="card-header text-muted border-bottom-0">
+                            Digital Strategist
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="lead"><b><?php echo $rows["nombre"]; ?></b></h2> <!--en esta parte va el nombre -->
+                                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist /
+                                        Coffee Lover </p>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="small"><span class="fa-li"><i
+                                                    class="fas fa-lg fa-building"></i></span> Dirección: <?php echo $rows["descripcion"]; ?></li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telefono #: <?php echo $rows["valorcomercial"]; ?></li>
+                                    </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <img src="../<?php echo $rows['foto']; ?>" alt=""
+                                        class="img-circle img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <a href="editar_perfil_usuarios.php" class="btn btn-sm bg-teal">
+                                    <i class="fas fa-comments"></i>Editar
+                                </a>
+                                <a href="eliminar_usuarios.php" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user"></i>  Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       
 
 

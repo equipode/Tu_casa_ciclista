@@ -23,30 +23,7 @@
   <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-      <!-- MENU CON OPCIONES DESPLEGABLES -->
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link ">
-          <i class="nav-icon fas fa-user"></i>
-          <p>
-            CLIENTES
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="clientes_registrar.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Listado</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="clientes_listado.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Nuevo Cliente</p>
-            </a>
-          </li>
-        </ul>
-      </li> 
+       
 
       <!-- MENU CON OPCIONES DESPLEGABLES -->
       <li class="nav-item has-treeview">
@@ -59,13 +36,13 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="productos_listados.php" class="nav-link">
+            <a href="productos_admin.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Listado</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="productos_crear.php" class="nav-link">
+            <a href="registrar_productos.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Nuevo Producto</p>
             </a>
@@ -73,24 +50,7 @@
         </ul>
       </li>
 
-      <!-- MENU CON OPCIONES DESPLEGABLES -->
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-clipboard-list"></i>
-          <p>
-            ALQUILERES
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="clientes_registrar.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Listado</p>
-            </a>
-          </li>
-        </ul>
-      </li>
+      
 
       <!-- MENU CON OPCIONES DESPLEGABLES -->
       <li class="nav-item has-treeview">
@@ -102,44 +62,23 @@
           </p>
         </a>
         <ul class="nav nav-treeview">
+          
           <li class="nav-item">
-            <a href="clientes_registrar.php" class="nav-link">
+            <a href="crear_usuario.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Listado</p>
+              <p>Crear nuevo</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="clientes_listado.php" class="nav-link">
+            <a href="listado_usuarios.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Crear nuevo</p>
+              <p>Listado de Usuario</p>
             </a>
           </li>
         </ul>
       </li>
 
-            <li class="nav-item has-treeview">
-        <a href="#" class="nav-link ">
-          <i class="nav-icon fas fa-book-reader"></i>
-          <p>
-            ESTUDIANTES
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="clientes_registrar.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Listado</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="estudiantes_crear.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Crear nuevo</p>
-            </a>
-          </li>
-        </ul>
-      </li>
+            
 
     </ul>
   </nav>
