@@ -92,7 +92,7 @@
 
       <div class="row d-print-none"><!-- fila contenedora -->
         <div class="col-md-12"> <!-- fin columna de contenido -->
-        <form name="frm_filtro" id="frm_filtro" method="post" action="productos_informes.php">
+        <form name="frm_filtro" id="frm_filtro" method="post" action="informe.php">
             <div class="card">
               <div class="card-header bg-indigo">
                 <h3 class="card-title">Filtrar Datos </h3>

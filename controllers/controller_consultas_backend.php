@@ -47,6 +47,24 @@ class ExtraerDatos extends ConsultasDB
 		return $lista;
 	}
 
+	//listado clientes
+
+	function listadoClientes($start=0, $regsCant = 0){
+		$sql = "SELECT * FROM clientes";
+		if ($regsCant > 0 )
+			 $sql = "SELECT * from clientes $start,$regsCant";
+		$lista = $this->consulta_generales($sql);	
+		return $lista;
+	}
+
+	//Clientes detalles
+
+	function clientesDetalle($idc){
+		$sql = "SELECT * from clientes where id=$idc ";
+		$lista = $this->consulta_generales($sql);	
+		return $lista;
+	}
+
 	//Detalle de productos
 	function productoPorId($idFilter){
 		$sql = "SELECT * from productos where cod=$idFilter";
