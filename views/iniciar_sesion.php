@@ -77,7 +77,7 @@
         <a href="forgot-password.html">Olvide mi contraseña</a>
       </p>
       <p class="mb-0">
-        <a href="crear_cuenta.php" class="text-center">crear un a cuenta</a>
+        <a href="crear_cuenta.php" class="text-center">crear una cuenta</a>
       </p>
     </div>
     <!-- /.login-card-body -->

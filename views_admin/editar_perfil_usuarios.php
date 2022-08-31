@@ -147,7 +147,7 @@
 
                         </form> <!-- /.fin Form -->
                     </div>
-                </div>
+               
 
             </section>
             <!-- /.content -->
