@@ -15,7 +15,7 @@ class DBConfig {
         $this->error = true;
     }
 	
-	function conexion($host='localhost',$user='root',$pass='asd_123456',$db='db_cienaganews'){  // connection function
+	function conexion($host='localhost',$user='root',$pass='12345678',$db='db_info_apps'){  // connection function
 	    $this->error_message = "";
         $this->host = $host;
         $this->user = $user;

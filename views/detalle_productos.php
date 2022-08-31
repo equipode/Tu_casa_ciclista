@@ -16,14 +16,14 @@
 </head>
 <body class="sidebar-collapse sidebar-mini">
 
-<?php include "includes/config.php"; ?>
+<?php include "includes2/config.php"; ?>
 
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
     <?php 
-      include "includes/header.php";
+      include "includes2/header.php";
     ?>
   </nav>
   <!-- /.navbar -->
@@ -31,7 +31,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
     <?php 
-    include "includes/lateralaside.php";
+    include "includes2/lateralaside.php";
      ?>
   </aside>
 
@@ -42,12 +42,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Titulo Página</h1>
+            <h1>Información del cliente</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">titulo Corto</li>
+              <li class="breadcrumb-item active">Clientes</li>
             </ol>
           </div>
         </div>
@@ -56,6 +56,40 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-header text-muted border-bottom-0">
+                  Digital Strategist
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="col-7">
+                      <h2 class="lead"><b>Nicole Pearson</b></h2>
+                      <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                      <ul class="ml-4 mb-0 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
+                      </ul>
+                    </div>
+                    <div class="col-5 text-center">
+                      <img src="../templates/AdminLTE-3.0.5/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="text-right">
+                    <a href="#" class="btn btn-sm bg-teal">
+                      <i class="fas fa-comments"></i>
+                    </a>
+                    <a href="#" class="btn btn-sm btn-primary">
+                      <i class="fas fa-user"></i> View Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
 
       
 

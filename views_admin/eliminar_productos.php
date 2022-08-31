@@ -1,3 +1,8 @@
+<?php   
+  require ("../models/models_admin.php");
+  include "../controllers/controller_consultas_backend_editodel.php";  
+  date_default_timezone_set("America/Bogota");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +47,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Titulo Página</h1>
+            <h1>Eliminar Producto</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">titulo Corto</li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item active">Eliminar</li>
             </ol>
           </div>
         </div>
@@ -55,12 +60,112 @@
     </section>
 
     <!-- Main content -->
+
+<?php 
+
+if(isset($_GET["cp"])){//URL PERFECTA
+
+  $objDBC = new ExtraerDatos();
+
+  $producto = array();
+  $producto = $objDBC->productoPorId($_GET["cp"]);
+
+  if($producto){ //VERIFICA QUE LA INFORMACION EXISTE
+
+?>
+
     <section class="content">
 
-      
+      <div class="row">
+        
+<!-- COLUMNA DE FORMULARIO  -->
+        <div class="col-md-6"><!-- columna de contenido -->
+          
+          
+            <!-- /.card-header -->
+            <div class="card">
+            <div class="card-header bg-indigo">
+              <h3 class="card-title">Confirmar Eliminación </h3>
+            </div>
+            <!-- Para controles de formularios siempre usar etiqueta FORM -->
+
+            <?php 
+            if(isset($_POST["txt_codprod"])){//verificar la existencia de envio de datos
+
+              $codp = $_POST["txt_codprod"];              
+
+              $objDBO = new DBConfig();
+              $objDBO->config();
+              $objDBO->conexion();
+
+              $ejecucion = $objDBO->Operaciones("DELETE FROM productos 
+                                                 WHERE cod=$codp ");
+
+              if($ejecucion){ // Todo se ejecuto correctamente
+                echo "<div class='alert alert-success'>
+                         Producto ha sido Eliminado correctamente<br>                         
+                      </div>
+                      <a href='productos_listados.php' class='btn btn-default'>Ver Listado </a>";
+
+              }else{ // Algo paso mal
+                echo "<div class='alert alert-danger'>
+                         Ha ocurrido un error inexperado
+                      </div>";
+              }
+
+              $objDBO->close();
+
+
+            }else{
+            ?>
+
+
+            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="productos_eliminar.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
+              
+              <div class="card-body">
+                  Usted va a eliminar el producto con nombre <b><?php echo $producto[0]['nombre']; ?></b><br>
+                  Presione <b>Aceptar</b> para eliminar. <br><br>
+
+                  <b>Importante</b>. Una vez eliminado no podra recuperarse.
+              </div>
+
+              <div class="card-footer">
+                <button type="submit" id="btn_actualizar" class="btn btn-success">Aceptar</button>
+                <a href="productos_listados.php" class="btn btn-default">Cancelar</a>
+              </div>
+
+              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $producto[0]['cod']; ?>">
+
+            </form> <!-- /.fin Form -->
+
+            <?php 
+            }
+            ?>
+
+          </div>
+
+      </div>
 
 
     </section>
+
+  <?php 
+  }else{//en caso la URL tiene un valor incorrecto
+    echo "<div class='alert alert-danger'>
+              <b>Acceso Denegado</b><br>
+              Información no existe en base de datos
+          </div>";
+  }
+
+}else{//en caso que URL haya sido alterada
+  echo "<div class='alert alert-danger'>
+            <b>Acceso Denegado</b><br>
+            Usted esta accediendo de forma incorrecta
+        </div>";
+}
+?>
+
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -78,6 +183,9 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+
+
+
 
 <!-- jQuery -->
 <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
