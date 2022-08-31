@@ -57,7 +57,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
             <div class="card bg-light">
                 <div class="card-header text-muted border-bottom-0">
                   Digital Strategist

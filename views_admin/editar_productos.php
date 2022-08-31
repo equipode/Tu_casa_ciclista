@@ -158,7 +158,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
             ?>
 
 
-            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="productos_editar.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
+            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="editar_productos.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
               <div class="card-body">
 
                 <div class="row">
@@ -225,7 +225,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
               <div class="card-footer">
                 <button type="submit" id="btn_actualizar" class="btn btn-success">Actualizar Producto</button>
-                <a href="productos_listados.php" class="btn btn-default">Cancelar</a>
+                <a href="productos_admin.php" class="btn btn-default">Cancelar</a>
               </div>
 
               <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $producto[0]['cod']; ?>">

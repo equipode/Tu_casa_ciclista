@@ -56,7 +56,96 @@
 
     <!-- Main content -->
     <section class="content">
+    <div class="row">
+                    <div class="col-md-4">
+                        <form role="form" name="frm_prods" id="frm_prods" method="POST"
+                            action="editar_productos.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
+                            <div class="card-body">
 
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label for="txt_refer">Referencia</label>
+                                            <input type="text" class="form-control" id="txt_refer" name="txt_refer"
+                                                placeholder="Nombre" value="<?php echo $producto[0]['referencia']; ?>">
+                                        </div>
+                                    </div>
+
+                                    <!-- Control Inputbox ejemplo -->
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label for="txt_Nombre">Nombre del Producto</label>
+                                            <input type="text" class="form-control" id="txt_Nombre" name="txt_Nombre"
+                                                placeholder="Nombre" value="<?php echo $producto[0]['nombre']; ?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label for="txt_Descri">Coloque una Descripción</label>
+                                            <textarea class="form-control" rows="3" placeholder="Describa ..."
+                                                name="txt_Descri"
+                                                id="txt_Descri"><?php echo $producto[0]['descripcion']; ?></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Control cantidad  -->
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="txt_cantEx">Cantidad Existente</label>
+                                            <input type="text" class="form-control" id="txt_cantEx" name="txt_cantEx"
+                                                placeholder="Nombre" value="<?php echo $producto[0]['cantidad']; ?>">
+                                        </div>
+                                    </div>
+
+                                    <!-- Control VALOR -->
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="txt_vlrCom">Valor Comercial</label>
+                                            <input type="text" class="form-control" id="txt_vlrCom" name="txt_vlrCom"
+                                                placeholder="Nombre"
+                                                value="<?php echo $producto[0]['valorcomercial']; ?>">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 col-sm-6 col-12">
+                                        <img src="../<?php echo $producto[0]['foto']; ?>" width="100">
+                                    </div>
+                                    <!-- Control FileUpload ejemplo -->
+                                    <div class="col-md- col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <label for="txtFile">Subir Foto</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="txt_File"
+                                                        name="txt_File">
+                                                    <label class="custom-file-label" for="txt_File">Seleccionar</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div> <!-- /.fin row -->
+
+                            </div> <!-- /.fin card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" id="btn_actualizar" class="btn btn-success">Actualizar
+                                    Producto</button>
+                                <a href="productos_admin.php" class="btn btn-default">Cancelar</a>
+                            </div>
+
+                            <input type="hidden" name="txt_codprod" id="txt_codprod"
+                                value="<?php echo $producto[0]['cod']; ?>">
+                            <input type="hidden" name="txt_foto" id="txt_foto"
+                                value="<?php echo $producto[0]['foto']; ?>">
+
+                        </form> <!-- /.fin Form -->
+                    </div>
+                </div>
       
 
 
