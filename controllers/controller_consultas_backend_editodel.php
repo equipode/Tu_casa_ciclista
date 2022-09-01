@@ -74,6 +74,16 @@ class ExtraerDatos extends ConsultasDB
 		return $lista;
 	}
 
+	//Detalle de clientes
+	function clientePorId($idFilter){
+		$sql = "SELECT * from clientes where id=$idFilter";
+		if ($regsCant > 0)
+		      $sql = "SELECT * from clientes where id=$idFilter $start, $regsCant";
+		$lista = $this->consulta_generales($sql);	
+		return $lista;
+	}
+
+
 	//Detalle de productos segun concidencia
 	function productoPorIdCoinc($idFilter){
 		$sql = "SELECT * from productos where nombre like '%$idFilter%' ";
