@@ -68,7 +68,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
   $objDBC = new ExtraerDatos();
 
   $clientes = array();
-  $clientes = $objDBC->clientePorId($_GET["cp"]);
+  $clientes = $objDBC->usuariosPorId($_GET["cp"]);
 
   if($clientes){ //VERIFICA QUE LA INFORMACION EXISTE
 
@@ -98,7 +98,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("DELETE FROM clientes 
+              $ejecucion = $objDBO->Operaciones("DELETE FROM info_usuarios
                                                  WHERE id=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente

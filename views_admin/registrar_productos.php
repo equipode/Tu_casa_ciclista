@@ -52,8 +52,8 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Crear</li>
+                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
+                                <li class="breadcrumb-item active"><a href="productos_admin.php">Listado</a></li>
                             </ol>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto) 
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto) 
                                                                 values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$docruta' )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -153,7 +153,7 @@
                                             <div class="form-group">
                                                 <label for="txt_refer">Referencia</label>
                                                 <input type="text" class="form-control" id="txt_refer" name="txt_refer"
-                                                    placeholder="Nombre">
+                                                    placeholder="#">
                                             </div>
                                         </div>
 
@@ -169,7 +169,7 @@
                                         <div class="col-md-12 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txt_Descri">Coloque una Descripción</label>
-                                                <textarea class="form-control" rows="3" placeholder="Describa ..."
+                                                <textarea class="form-control" rows="3" placeholder="Describa..."
                                                     name="txt_Descri" id="txt_Descri"></textarea>
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@
                                             <div class="form-group">
                                                 <label for="txt_cantEx">Cantidad Existente</label>
                                                 <input type="text" class="form-control" id="txt_cantEx"
-                                                    name="txt_cantEx" placeholder="Nombre">
+                                                    name="txt_cantEx" placeholder="Stock">
                                             </div>
                                         </div>
 
@@ -188,7 +188,7 @@
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Valor Comercial</label>
                                                 <input type="text" class="form-control" id="txt_vlrCom"
-                                                    name="txt_vlrCom" placeholder="Nombre">
+                                                    name="txt_vlrCom" placeholder="Valor">
                                             </div>
                                         </div>
 

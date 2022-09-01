@@ -51,8 +51,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Eliminar</li>
+              <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
             </ol>
           </div>
         </div>
@@ -98,7 +97,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("DELETE FROM productos 
+              $ejecucion = $objDBO->Operaciones("DELETE FROM info_productos
                                                  WHERE cod=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente

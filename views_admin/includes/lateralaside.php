@@ -38,13 +38,19 @@
           <li class="nav-item">
             <a href="productos_admin.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Listado</p>
+              <p>Listado de productos</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="registrar_productos.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Nuevo Producto</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="informe.php" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Informe general</p>
             </a>
           </li>
         </ul>

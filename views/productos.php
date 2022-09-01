@@ -47,12 +47,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>LOS MEJORES PRODUCTOS</h1>
+                            <h1>PRODUCTOS</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Clientes</li>
                             </ol>
                         </div>
                     </div>
@@ -80,19 +79,12 @@
         <div class="col-12 col-sm-6 col-md-6">
                 <div class="card bg-light">
                     <div class="card-header text-muted border-bottom-0">
-                        Digital Strategist
+                        <h2><?php echo $rows["nombre"]; ?></h2>
                     </div>
                     <div class="card-body pt-0">
                         <div class="row">
-                            <div class="col-7">
-                                <h2 class="lead"><b><?php echo $rows["nombre"]; ?></b></h2> <!--en esta parte va el nombre -->
-                                <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist /
-                                    Coffee Lover </p>
-                                <ul class="ml-4 mb-0 fa-ul text-muted">
-                                    <li class="small"><span class="fa-li"><i
-                                                class="fas fa-lg fa-building"></i></span> Dirección: <?php echo $rows["descripcion"]; ?></li>
-                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span>Telefono #: <?php echo $rows["valorcomercial"]; ?></li>
-                                </ul>
+                            <div class="col-7">                               
+                                <h3>Precio: <?php echo $rows["valorcomercial"]; ?></h3>             
                             </div>
                             <div class="col-5 text-center">
                                 <img src="../<?php echo $rows['foto']; ?>" alt=""
@@ -102,11 +94,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="text-right">
-                            <a href="#" class="btn btn-sm bg-teal">
-                                <i class="fas fa-comments"></i>
-                            </a>
-                            <a href="clientes_detalles.php?c=<?php  echo $rows['id'];?>" class="btn btn-sm btn-primary">
-                                <i class="fas fa-user"></i> Perfil
+                            <a href="detalle_productos.php?c=<?php  echo $rows['id'];?>" class="btn btn-sm btn-primary">
+                               </i> Detalle
                             </a>
                         </div>
                     </div>
