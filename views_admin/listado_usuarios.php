@@ -47,12 +47,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Información del cliente</h1>
+                            <h1>Información de los usuarios</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item active">Clientes</li>
+                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>     
                             </ol>
                         </div>
                     </div>
@@ -68,7 +67,7 @@
             $objDB = new ExtraerDatos();
 
             $clienteslista = array();
-            $clienteslista = $objDB->listadoClientes();
+            $clienteslista = $objDB->listadoUsuarios();
 
             if($clienteslista){
 
@@ -80,15 +79,14 @@
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card bg-light">
                         <div class="card-header text-muted border-bottom-0">
-                            Digital Strategist
+                            Usuario
                         </div>
                         <div class="card-body pt-0">
                             <div class="row">
                                 <div class="col-7">
                                     <h2 class="lead"><b><?php echo $rows["nombre"]; ?></b></h2>
                                     <!--en esta parte va el nombre -->
-                                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist /
-                                        Coffee Lover </p>
+                                    <p class="text-muted text-sm"><b>Descripción: </b>Desarrollador de software e inteligencia artificial. </p>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i
                                                     class="fas fa-lg fa-building"></i></span> Dirección:

@@ -24,61 +24,70 @@ class ExtraerDatos extends ConsultasDB
 
 	
 	//MUESTRA LISTADO DE USUARIOS
-	function listadoUsuarios($start=0, $regsCant = 0){
-		$sql = "SELECT * FROM usuarios";
+	function listadoclientes($start=0, $regsCant = 0){
+		$sql = "SELECT * FROM info_clientes";
 		if ($regsCant > 0 )
-			 $sql = "SELECT * from usuarios $start,$regsCant";
+			 $sql = "SELECT * from info_clientes $start,$regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
-	// DETALLE DE USUARIOS SELECICONADA SEGUN ID
-	function usuariosDetalle($idu){
-		$sql = "SELECT * from usuarios where id=$idu ";
+	// DETALLE DE CLIENTES SELECCIONADA SEGUN ID
+	function clientesDetalle($idu){
+		$sql = "SELECT * from info_clientes where id=$idu ";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
 	//listado de productos
 	function listadoProductos($start=0, $regsCant = 0){
-		$sql = "SELECT * FROM productos";
+		$sql = "SELECT * FROM info_productos";
 		if ($regsCant > 0 )                   //productos es como se llama la tabla en la base de datos
-			 $sql = "SELECT * from productos $start,$regsCant";
+			 $sql = "SELECT * from info_productos $start,$regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
-	//listado clientes
+	//listado usuarios
 
-	function listadoClientes($start=0, $regsCant = 0){
-		$sql = "SELECT * FROM clientes";
+	function listadoUsuarios($start=0, $regsCant = 0){
+		$sql = "SELECT * FROM info_usuarios";
 		if ($regsCant > 0 )
-			 $sql = "SELECT * from clientes $start,$regsCant";
+			 $sql = "SELECT * from info_usuarios $start,$regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
-	//Clientes detalles
+	//Usuarios detalles
 
-	function clientesDetalle($idc){
-		$sql = "SELECT * from clientes where id=$idc ";
+	function usuariosDetalle($idc){
+		$sql = "SELECT * from info_usuarios where id=$idc ";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
 	//Detalle de productos
 	function productoPorId($idFilter){
-		$sql = "SELECT * from productos where cod=$idFilter";
+		$sql = "SELECT * from info_productos where cod=$idFilter";
 		if ($regsCant > 0)
-		      $sql = "SELECT * from productos where cod=$idFilter $start, $regsCant";
+		      $sql = "SELECT * from info_productos where cod=$idFilter $start, $regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
+		//Detalle de usuarios
+		function usuariosPorId($idFilter){
+			$sql = "SELECT * from info_usuarios where id=$idFilter";
+			if ($regsCant > 0)
+				  $sql = "SELECT * from info_usuarios where id=$idFilter $start, $regsCant";
+			$lista = $this->consulta_generales($sql);	
+			return $lista;
+		}
+
 	//Detalle de productos segun concidencia
 	function productoPorIdCoinc($idFilter){
-		$sql = "SELECT * from productos where nombre like '%$idFilter%' ";
+		$sql = "SELECT * from info_productos where nombre like '%$idFilter%' ";
 		if ($regsCant > 0)
-		      $sql = "SELECT * from productos where nombre like '%$idFilter%' $start, $regsCant";
+		      $sql = "SELECT * from info_productos where nombre like '%$idFilter%' $start, $regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}

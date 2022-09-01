@@ -50,8 +50,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active"><a href="productos_listados.php">Listado</a></li>
+              <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
             </ol>
           </div>
         </div>
@@ -135,7 +134,6 @@
                       <th>NOMBRE</th>
                       <th>CANTIDAD</th>
                       <th>VALOR COMERCIAL</th>
-                      <th>EDAD</th>
                       <th>FOTO</th>
                       <th style="width: 40px">Accion</th>
                     </tr>
@@ -152,13 +150,11 @@
                       <td><?php echo $rows["nombre"]; ?></td>
                       <td><?php echo $rows["cantidad"]; ?></td>
                       <td><?php echo $rows["valorcomercial"]; ?></td>  
-                      <td>GUETTE</td>
                       <td><img src="../<?php echo $rows['foto']; ?>" width="50" ></td>
                       <td>
                         
-                        <a href="productos_editar.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
-                        <a href="productos_eliminar.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
-
+                      <a href="editar_productos.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                        <a href="eliminar_productos.php?cp=<?php echo $rows['cod']; ?>" class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>  
                     <?php 
@@ -171,7 +167,7 @@
               }else{
                 echo "<div class='alert alert-secondary'>
                       No hay datos de productos. Registre uno<br>
-                      <a href='productos_crear.php' class='btn btn-info' >Registro</a> 
+                      <a href='registrar_productos.php' class='btn btn-info' >Registro</a> 
                       </div>
                       ";
               }

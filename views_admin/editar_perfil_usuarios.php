@@ -52,8 +52,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Editar</li>
+              <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
+              <li class="breadcrumb-item active"><a href="listado_usuarios.php">Listado</a></li>
             </ol>
           </div>
         </div>
@@ -69,7 +69,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
   $objDBC = new ExtraerDatos();
 
   $cliente = array();
-  $cliente = $objDBC->clientePorId($_GET["cp"]);
+  $cliente = $objDBC->usuariosPorId($_GET["cp"]);
 
   if($cliente){ //VERIFICA QUE LA INFORMACION EXISTE
 
@@ -109,7 +109,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                 $ext = strrchr(basename($_FILES["txt_File"]['name']),".");        
                 if($extens[$ext]){            
                   if($_FILES["txt_File"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
-                    $docruta = "imgs/productos/";
+                    $docruta = "imgs/usuarios/";
                     $postname = date("Y").date("m").date("d")."_".date("H").date("i");
                     $fullname = explode(".",basename($_FILES["txt_File"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
                     $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
@@ -138,7 +138,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE clientes SET nombre='$refer', telefono='$nombr', direccion='$descr', usuaio='$canti', pass='$vlrcm', foto='$docruta' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$refer', telefono='$nombr', direccion='$descr', usuario='$canti', pass='$vlrcm', foto='$docruta' 
                                                  WHERE id=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -174,14 +174,14 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-12 col-sm-12 col-12">
                     <div class="form-group">
                       <label for="txt_Nombre">Télefono</label>
-                      <input type="text" class="form-control" id="txt_Nombre" name="txt_Nombre" placeholder="Nombre" value="<?php echo $cliente[0]['telefono']; ?>">
+                      <input type="text" class="form-control" id="txt_Nombre" name="txt_Nombre" placeholder="#" value="<?php echo $cliente[0]['telefono']; ?>">
                     </div> 
                   </div>  
                                       
                   <div class="col-md-12 col-sm-12 col-12">                    
                     <div class="form-group">
                       <label for="txt_Descri">Direccion</label>
-                      <textarea class="form-control" rows="3"  placeholder="Describa ..." name="txt_Descri" id="txt_Descri"><?php echo $cliente[0]['direccion']; ?></textarea>
+                      <textarea class="form-control" rows="3"  placeholder="Cr 20 #05..." name="txt_Descri" id="txt_Descri"><?php echo $cliente[0]['direccion']; ?></textarea>
                     </div>  
                   </div>
 
@@ -189,7 +189,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label for="txt_cantEx">Usuario</label>
-                      <input type="text" class="form-control" id="txt_cantEx" name="txt_cantEx" placeholder="Nombre" value="<?php echo $cliente[0]['usuaio']; ?>">
+                      <input type="text" class="form-control" id="txt_cantEx" name="txt_cantEx" placeholder="Correo" value="<?php echo $cliente[0]['usuario']; ?>">
                     </div> 
                   </div> 
 
@@ -197,7 +197,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label for="txt_vlrCom">Contraseña</label>
-                      <input type="text" class="form-control" id="txt_vlrCom" name="txt_vlrCom" placeholder="Nombre" value="<?php echo $cliente[0]['pass']; ?>">
+                      <input type="text" class="form-control" id="txt_vlrCom" name="txt_vlrCom" placeholder="" value="<?php echo $cliente[0]['pass']; ?>">
                     </div> 
                   </div> 
 
@@ -225,7 +225,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
               <div class="card-footer">
                 <button type="submit" id="btn_actualizar" class="btn btn-success">Actualizar datos</button>
-                <a href="clientes_listado.php" class="btn btn-default">Cancelar</a>
+                <a href="listado_usuarios.php" class="btn btn-default">Cancelar</a>
               </div>
 
               <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $cliente[0]['id']; ?>">
