@@ -14,7 +14,7 @@ class DBConfig {
     public function config(){ // class config
         $this->error = true;
     }
-	
+	//function conexion($host='localhost',$user='root',$pass='12345678',$db='db_alquileres'){
 	function conexion($host='localhost',$user='root',$pass='dayana2004',$db='db_alquileres'){  // connection function
 	    $this->error_message = "";
         $this->host = $host;
