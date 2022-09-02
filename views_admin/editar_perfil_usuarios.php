@@ -68,10 +68,10 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
   $objDBC = new ExtraerDatos();
 
-  $cliente = array();
-  $cliente = $objDBC->usuariosPorId($_GET["cp"]);
+  $usuario = array();
+  $usuario = $objDBC->usuariosPorId($_GET["cp"]);
 
-  if($cliente){ //VERIFICA QUE LA INFORMACION EXISTE
+  if($usuario){ //VERIFICA QUE LA INFORMACION EXISTE
 
 ?>
 
@@ -91,15 +91,15 @@ if(isset($_GET["cp"])){//URL PERFECTA
             <!-- Para controles de formularios siempre usar etiqueta FORM -->
 
             <?php 
-            if(isset($_POST["txt_refer"])){//verificar la existencia de envio de datos
+            if(isset($_POST["txt_nomb"])){//verificar la existencia de envio de datos
 
               $codp = $_POST["txt_codprod"];
-              $refer = $_POST["txt_refer"];
-              $nombr = $_POST["txt_Nombre"];
-              $descr = $_POST["txt_Descri"];
-              $canti = $_POST["txt_cantEx"];
-              $vlrcm = $_POST["txt_vlrCom"];
-              $docruta = $_POST["txt_foto"];
+              $nomb = $_POST["txt_nomb"];
+              $telf = $_POST["txt_telef"];
+              $direc = $_POST["txt_dire"];
+              $email = $_POST["txt_email"];
+              $pass = $_POST["txt_pass"];
+              $fotou = $_POST["txt_foto"];
 
               //Verificamos que el usuario halla seleccionado archivos
               //y se procede a subir al servidor y elazarlo a la base de datos    
@@ -109,13 +109,13 @@ if(isset($_GET["cp"])){//URL PERFECTA
                 $ext = strrchr(basename($_FILES["txt_File"]['name']),".");        
                 if($extens[$ext]){            
                   if($_FILES["txt_File"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
-                    $docruta = "imgs/usuarios/";
+                    $fotou = "imgs/usuarios/";
                     $postname = date("Y").date("m").date("d")."_".date("H").date("i");
                     $fullname = explode(".",basename($_FILES["txt_File"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
                     $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
                     $temporal = $_FILES["txt_File"]['tmp_name']; //Obtenemos la ruta Original del archivo
-                    $Destino = "../".$docruta.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
-                    $docruta = $docruta.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    $Destino = "../".$fotou.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotou = $fotou.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
                     if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
                       $msgfile = "Imagen subida.";
                     }else{
@@ -138,7 +138,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$refer', telefono='$nombr', direccion='$descr', usuario='$canti', pass='$vlrcm', foto='$docruta' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$nomb', telefono='$telf', direccion='$direc', usuario='$email', pass='$pass', foto='$fotou' 
                                                  WHERE id=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -166,7 +166,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-12 col-sm-12 col-12">
                     <div class="form-group">
                       <label for="txt_refer">Nombre</label>
-                      <input type="text" class="form-control" id="txt_refer" name="txt_refer" placeholder="Nombre" value="<?php echo $cliente[0]['nombre']; ?>">
+                      <input type="text" class="form-control" id="txt_nomb" name="txt_nomb" placeholder="Nombre" value="<?php echo $usuario[0]['nombre']; ?>">
                     </div> 
                   </div>  
 
@@ -174,14 +174,14 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-12 col-sm-12 col-12">
                     <div class="form-group">
                       <label for="txt_Nombre">Télefono</label>
-                      <input type="text" class="form-control" id="txt_Nombre" name="txt_Nombre" placeholder="#" value="<?php echo $cliente[0]['telefono']; ?>">
+                      <input type="text" class="form-control" id="txt_telef" name="txt_telef" placeholder="#" value="<?php echo $usuario[0]['telefono']; ?>">
                     </div> 
                   </div>  
                                       
                   <div class="col-md-12 col-sm-12 col-12">                    
                     <div class="form-group">
                       <label for="txt_Descri">Direccion</label>
-                      <textarea class="form-control" rows="3"  placeholder="Cr 20 #05..." name="txt_Descri" id="txt_Descri"><?php echo $cliente[0]['direccion']; ?></textarea>
+                      <textarea class="form-control" rows="3"  placeholder="Cr 20 #05..." name="txt_dire" id="txt_dire"><?php echo $usuario[0]['direccion']; ?></textarea>
                     </div>  
                   </div>
 
@@ -189,7 +189,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label for="txt_cantEx">Usuario</label>
-                      <input type="text" class="form-control" id="txt_cantEx" name="txt_cantEx" placeholder="Correo" value="<?php echo $cliente[0]['usuario']; ?>">
+                      <input type="text" class="form-control" id="txt_email" name="txt_email" placeholder="Correo" value="<?php echo $usuario[0]['usuario']; ?>">
                     </div> 
                   </div> 
 
@@ -197,13 +197,13 @@ if(isset($_GET["cp"])){//URL PERFECTA
                   <div class="col-md-6 col-sm-6 col-12">
                     <div class="form-group">
                       <label for="txt_vlrCom">Contraseña</label>
-                      <input type="text" class="form-control" id="txt_vlrCom" name="txt_vlrCom" placeholder="" value="<?php echo $cliente[0]['pass']; ?>">
+                      <input type="text" class="form-control" id="txt_pass" name="txt_pass" placeholder="" value="<?php echo $usuario[0]['pass']; ?>">
                     </div> 
                   </div> 
 
 
                   <div class="col-md-6 col-sm-6 col-12">
-                    <img src="../<?php echo $cliente[0]['foto']; ?>"  width="100">
+                    <img src="../<?php echo $usuario[0]['foto']; ?>"  width="100">
                   </div>
                   <!-- Control FileUpload ejemplo -->                
                   <div class="col-md- col-sm-12 col-12">
@@ -228,8 +228,8 @@ if(isset($_GET["cp"])){//URL PERFECTA
                 <a href="listado_usuarios.php" class="btn btn-default">Cancelar</a>
               </div>
 
-              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $cliente[0]['id']; ?>">
-              <input type="hidden" name="txt_foto" id="txt_foto" value="<?php echo $cliente[0]['foto']; ?>">
+              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $usuario[0]['id']; ?>">
+              <input type="hidden" name="txt_foto" id="txt_foto" value="<?php echo $usuario[0]['foto']; ?>">
 
             </form> <!-- /.fin Form -->
 

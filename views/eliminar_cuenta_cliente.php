@@ -18,14 +18,14 @@
 
 <body class="sidebar-collapse sidebar-mini">
 
-    <?php include "includes/config.php"; ?>
+    <?php include "includes2/config.php"; ?>
 
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
             <?php 
-      include "includes/header.php";
+      include "includes2/header.php";
     ?>
         </nav>
         <!-- /.navbar -->
@@ -33,7 +33,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
             <?php 
-    include "includes/lateralaside.php";
+    include "includes2/lateralaside.php";
      ?>
         </aside>
 
@@ -92,7 +92,7 @@
 
         <footer class="main-footer">
             <?php 
-      include "includes/footer.php";
+      include "includes2/footer.php";
      ?>
         </footer>
 
