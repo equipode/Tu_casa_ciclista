@@ -67,10 +67,10 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
   $objDBC = new ExtraerDatos();
 
-  $clientes = array();
-  $clientes = $objDBC->usuariosPorId($_GET["cp"]);
+  $usuarios = array();
+  $usuarios = $objDBC->usuariosPorId($_GET["cp"]);
 
-  if($clientes){ //VERIFICA QUE LA INFORMACION EXISTE
+  if($usuarios){ //VERIFICA QUE LA INFORMACION EXISTE
 
 ?>
 
@@ -123,7 +123,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
             <form role="form" name="frm_prods" id="frm_prods" method="POST" action="eliminar_usuarios.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
               
               <div class="card-body">
-                  Usted va a eliminar el cliente con nombre <b><?php echo $clientes[0]['nombre']; ?></b><br>
+                  Usted va a eliminar el cliente con nombre <b><?php echo $usuarios[0]['nombre']; ?></b><br>
                   Presione <b>Aceptar</b> para eliminar. <br><br>
 
                   <b>Importante</b>. Una vez eliminado no podra recuperarse.
@@ -134,7 +134,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                 <a href="listado_usuarios.php" class="btn btn-default">Cancelar</a>
               </div>
 
-              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $clientes[0]['id']; ?>">
+              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $usuarios[0]['id']; ?>">
 
             </form> <!-- /.fin Form -->
 

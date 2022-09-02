@@ -66,15 +66,15 @@
                 <?php 
             $objDB = new ExtraerDatos();
 
-            $clienteslista = array();
-            $clienteslista = $objDB->listadoUsuarios();
+            $listadousuarios = array();
+            $listadousuarios = $objDB->listadoUsuarios();
 
-            if($clienteslista){
+            if($listadousuarios){
 
               echo "<div class='row'>";
               
             //proceso para mostrar listas de datos
-            foreach ($clienteslista as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+            foreach ($listadousuarios as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
         ?>
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card bg-light">

@@ -94,13 +94,13 @@
                 $ext = strrchr(basename($_FILES["txt_File"]['name']),".");        
                 if($extens[$ext]){            
                   if($_FILES["txt_File"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
-                    $docruta = "imgs/productos/";
+                    $fotop = "imgs/productos/";
                     $postname = date("Y").date("m").date("d")."_".date("H").date("i");
                     $fullname = explode(".",basename($_FILES["txt_File"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
                     $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
                     $temporal = $_FILES["txt_File"]['tmp_name']; //Obtenemos la ruta Original del archivo
-                    $Destino = "../".$docruta.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
-                    $docruta = $docruta.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    $Destino = "../".$fotop.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop = $fotop.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
                     if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
                       $msgfile = "Imagen subida.";
                     }else{
@@ -124,7 +124,7 @@
               $objDBO->conexion();
 
               $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto) 
-                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$docruta' )  ");
+                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop' )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>

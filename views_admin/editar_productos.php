@@ -102,7 +102,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $descr = $_POST["txt_Descri"];
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
-              $docruta = $_POST["txt_foto"];
+              $fotop = $_POST["txt_foto"];
 
               //Verificamos que el usuario halla seleccionado archivos
               //y se procede a subir al servidor y elazarlo a la base de datos    
@@ -112,13 +112,13 @@ if(isset($_GET["cp"])){//URL PERFECTA
                 $ext = strrchr(basename($_FILES["txt_File"]['name']),".");        
                 if($extens[$ext]){            
                   if($_FILES["txt_File"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
-                    $docruta = "imgs/productos/";
+                    $fotop = "imgs/productos/";
                     $postname = date("Y").date("m").date("d")."_".date("H").date("i");
                     $fullname = explode(".",basename($_FILES["txt_File"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
                     $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
                     $temporal = $_FILES["txt_File"]['tmp_name']; //Obtenemos la ruta Original del archivo
-                    $Destino = "../".$docruta.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
-                    $docruta = $docruta.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    $Destino = "../".$fotop.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop = $fotop.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
                     if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
                       $msgfile = "Imagen subida.";
                     }else{
@@ -141,7 +141,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', cantidad=$canti, valorcomercial=$vlrcm, foto='$docruta' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', cantidad=$canti, valorcomercial=$vlrcm, foto='$fotop' 
                                                  WHERE cod=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente

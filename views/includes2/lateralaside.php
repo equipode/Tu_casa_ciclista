@@ -15,7 +15,7 @@
       <img src="../imgs/usuarios/user.png" class="img-circle elevation-2" alt="Usuario">
     </div>
     <div class="info">
-      <a href="#" class="d-block">Usuario Nombre</a>
+      <a href="iniciar_sesion.php" class="d-block">Usuario Nombre</a>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <a href="#" class="nav-link ">
           <i class="nav-icon fas fa-user"></i>
           <p>
-            CLIENTES
+            CLIENTE
             <i class="right fas fa-angle-left"></i>
           </p>
         </a>
