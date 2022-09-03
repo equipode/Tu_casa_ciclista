@@ -39,8 +39,8 @@ class ExtraerDatos extends ConsultasDB
 	}
 
 	// DETALLE DE PRODUCTOS
-	function productoDetalle($idu){
-		$sql = "SELECT * from info_productos where id=$idu ";
+	function productoDetalle($idp){
+		$sql = "SELECT * from info_productos where cod=$idp";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}

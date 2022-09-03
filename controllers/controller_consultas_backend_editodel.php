@@ -24,7 +24,7 @@ class ExtraerDatos extends ConsultasDB
 
 	
 	//MUESTRA LISTADO DE USUARIOS
-	function listadoClientes($start=0, $regsCant = 0){
+	function listadoclientes($start=0, $regsCant = 0){
 		$sql = "SELECT * FROM info_clientes";
 		if ($regsCant > 0 )
 			 $sql = "SELECT * from info_clientes $start,$regsCant";
@@ -34,6 +34,13 @@ class ExtraerDatos extends ConsultasDB
 	// DETALLE DE CLIENTES SELECCIONADA SEGUN ID
 	function clientesDetalle($idu){
 		$sql = "SELECT * from info_clientes where id=$idu ";
+		$lista = $this->consulta_generales($sql);	
+		return $lista;
+	}
+
+	// DETALLE DE PRODUCTOS
+	function productoDetalle($idp){
+		$sql = "SELECT * from info_productos where cod=$idp";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
@@ -74,15 +81,14 @@ class ExtraerDatos extends ConsultasDB
 		return $lista;
 	}
 
-	//Detalle de usuarios
-	function usuariosPorId($idFilter){
-		$sql = "SELECT * from info_usuarios where id=$idFilter";
-		if ($regsCant > 0)
-		      $sql = "SELECT * from info_usuarios where id=$idFilter $start, $regsCant";
-		$lista = $this->consulta_generales($sql);	
-		return $lista;
-	}
-
+		//Detalle de usuarios
+		function usuariosPorId($idFilter){
+			$sql = "SELECT * from info_usuarios where id=$idFilter";
+			if ($regsCant > 0)
+				  $sql = "SELECT * from info_usuarios where id=$idFilter $start, $regsCant";
+			$lista = $this->consulta_generales($sql);	
+			return $lista;
+		}
 
 	//Detalle de productos segun concidencia
 	function productoPorIdCoinc($idFilter){

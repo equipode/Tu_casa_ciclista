@@ -48,7 +48,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 align="right"><b>Pinarello-Prince</b></h1>
+                            <h1 align="right"><b>Pinarello-Prince </b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -65,10 +65,10 @@
             <?php 
     $objDB = new ExtraerDatos();
 
-    $idu = $_GET["c"];//variable url
+    $idp = $_GET["cp"];//variable url
 
     $productoDetalle = array();
-    $productoDetalle = $objDB->productoDetalle($idu);
+    $productoDetalle = $objDB->productoDetalle($idp);
     
     ?>
             <section class="content">
@@ -77,7 +77,7 @@
 
                     </div>
                     <div class="col-md-6">
-                        <img src="../imgs/productos/prince_20220902_1725.jpg" width="600">
+                        <img src="../<?php echo $productoDetalle[0]['foto'] ?>" width="600">
                     </div>
                     <div class="col-md-3">
 
@@ -90,15 +90,7 @@
                     </div>
                     <div class="col-md-8">
                         <h2 align="center"><b>Descripcion</b></h2><br>
-                        <h5>PURA EMOCIÓN
-                            Los diseñadores e ingenieros de Pinarello, han trasladado la increíble experiencia que
-                            genera el
-                            modelo DOGMA F12 a la nueva PRINCE.
-                            El resultado es una bicicleta con características técnicas y estándares de rendimiento que
-                            superan a muchas de las bicicletas de carretera de alta gama del mercado actual.
-                            El modelo PRINCE hereda el sistema de integración total de cables de la DOGMA F12, llamado
-                            TiCR,
-                            que permite una ventaja aerodinámica importante.</h5>
+                        <h5><?php echo $productoDetalle[0]['descripcion'] ?></h5>
                     </div>
                     <div class="col-md-2">
 
