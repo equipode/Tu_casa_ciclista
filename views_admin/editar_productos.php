@@ -22,7 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="sidebar-collapse sidebar-mini">
+<!-- class="sidebar-collapse sidebar-mini" -->
+
+<body>
 
     <?php include "includes/config.php"; ?>
 
@@ -50,7 +52,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Editar Producto</h1>
+                            <h1 align="right">Editar Producto</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -80,6 +82,10 @@ if(isset($_GET["cp"])){//URL PERFECTA
             <section class="content">
 
                 <div class="row">
+
+                    <div class="col-md-3">
+
+                    </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
                     <div class="col-md-6">
@@ -172,8 +178,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                             <div class="form-group">
                                                 <label for="txt_refer">Referencia</label>
                                                 <input type="text" class="form-control" id="txt_refer" name="txt_refer"
-                                                    placeholder="#"
-                                                    value="<?php echo $producto[0]['referencia']; ?>">
+                                                    placeholder="#" value="<?php echo $producto[0]['referencia']; ?>">
                                             </div>
                                         </div>
 
@@ -254,6 +259,10 @@ if(isset($_GET["cp"])){//URL PERFECTA
                             </form> <!-- /.fin Form -->
 
                         </div>
+                        <div class="col-md-3">
+
+                        </div>
+
 
                     </div>
 

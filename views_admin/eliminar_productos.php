@@ -5,62 +5,64 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="sidebar-collapse sidebar-mini">
 
-<?php include "includes/config.php"; ?>
+<body>
 
-<!-- Site wrapper -->
-<div class="wrapper">
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
-    <?php 
+    <?php include "includes/config.php"; ?>
+
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
+            <?php 
       include "includes/header.php";
     ?>
-  </nav>
-  <!-- /.navbar -->
+        </nav>
+        <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
-    <?php 
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
+            <?php 
     include "includes/lateralaside.php";
      ?>
-  </aside>
+        </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Eliminar Producto</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 align="right">Eliminar Producto</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
 
-    <!-- Main content -->
+            <!-- Main content -->
 
-<?php 
+            <?php 
 
 if(isset($_GET["cp"])){//URL PERFECTA
 
@@ -73,22 +75,27 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
 ?>
 
-    <section class="content">
+            <section class="content">
 
-      <div class="row">
-        
-<!-- COLUMNA DE FORMULARIO  -->
-        <div class="col-md-6"><!-- columna de contenido -->
-          
-          
-            <!-- /.card-header -->
-            <div class="card">
-            <div class="card-header bg-indigo">
-              <h3 class="card-title">Confirmar Eliminación </h3>
-            </div>
-            <!-- Para controles de formularios siempre usar etiqueta FORM -->
+                <div class="row">
 
-            <?php 
+                    <div class="col-md-3">
+
+                    </div>
+
+                    <!-- COLUMNA DE FORMULARIO  -->
+                    <div class="col-md-6">
+                        <!-- columna de contenido -->
+
+
+                        <!-- /.card-header -->
+                        <div class="card">
+                            <div class="card-header bg-indigo">
+                                <h3 class="card-title">Confirmar Eliminación </h3>
+                            </div>
+                            <!-- Para controles de formularios siempre usar etiqueta FORM -->
+
+                            <?php 
             if(isset($_POST["txt_codprod"])){//verificar la existencia de envio de datos
 
               $codp = $_POST["txt_codprod"];              
@@ -119,36 +126,44 @@ if(isset($_GET["cp"])){//URL PERFECTA
             ?>
 
 
-            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="eliminar_productos.php?cp=<?php echo $_GET['cp']; ?>" enctype="multipart/form-data">
-              
-              <div class="card-body">
-                  Usted va a eliminar el producto con nombre <b><?php echo $producto[0]['nombre']; ?></b><br>
-                  Presione <b>Aceptar</b> para eliminar. <br><br>
+                            <form role="form" name="frm_prods" id="frm_prods" method="POST"
+                                action="eliminar_productos.php?cp=<?php echo $_GET['cp']; ?>"
+                                enctype="multipart/form-data">
 
-                  <b>Importante</b>. Una vez eliminado no podra recuperarse.
-              </div>
+                                <div class="card-body">
+                                    Usted va a eliminar el producto con nombre
+                                    <b><?php echo $producto[0]['nombre']; ?></b><br>
+                                    Presione <b>Aceptar</b> para eliminar. <br><br>
 
-              <div class="card-footer">
-                <button type="submit" id="btn_actualizar" class="btn btn-success">Aceptar</button>
-                <a href="productos_admin.php" class="btn btn-default">Cancelar</a>
-              </div>
+                                    <b>Importante</b>. Una vez eliminado no podra recuperarse.
+                                </div>
 
-              <input type="hidden" name="txt_codprod" id="txt_codprod" value="<?php echo $producto[0]['cod']; ?>">
+                                <div class="card-footer">
+                                    <button type="submit" id="btn_actualizar" class="btn btn-success">Aceptar</button>
+                                    <a href="productos_admin.php" class="btn btn-default">Cancelar</a>
+                                </div>
 
-            </form> <!-- /.fin Form -->
+                                <input type="hidden" name="txt_codprod" id="txt_codprod"
+                                    value="<?php echo $producto[0]['cod']; ?>">
 
-            <?php 
+                            </form> <!-- /.fin Form -->
+
+                            <?php 
             }
             ?>
 
-          </div>
+                        </div>
 
-      </div>
+                        <div class="col-md-3">
+
+                        </div>
+
+                    </div>
 
 
-    </section>
+            </section>
 
-  <?php 
+            <?php 
   }else{//en caso la URL tiene un valor incorrecto
     echo "<div class='alert alert-danger'>
               <b>Acceso Denegado</b><br>
@@ -165,42 +180,44 @@ if(isset($_GET["cp"])){//URL PERFECTA
 ?>
 
 
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
-    <?php 
+        <footer class="main-footer">
+            <?php 
       include "includes/footer.php";
      ?>
-  </footer>
+        </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
 
 
-<!-- jQuery -->
-<script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="../templates/AdminLTE-3.0.5/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../templates/AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="../templates/AdminLTE-3.0.5/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../templates/AdminLTE-3.0.5/dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
+
+    <!-- jQuery -->
+    <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../templates/AdminLTE-3.0.5/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../templates/AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../templates/AdminLTE-3.0.5/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
+    </script>
+    <!-- AdminLTE App -->
+    <script src="../templates/AdminLTE-3.0.5/dist/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="../templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
 
 </body>
+
 </html>
