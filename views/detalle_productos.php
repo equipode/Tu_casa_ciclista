@@ -41,14 +41,24 @@
      ?>
         </aside>
 
-        <!-- Content Wrapper. Contains page content -->
+        <?php 
+    $objDB = new ExtraerDatos();
+
+    $idp = $_GET["cp"];//variable url
+
+    $productoDetalle = array();
+    $productoDetalle = $objDB->productoDetalle($idp);
+    
+    ?>
+
+        <!-- Content Wrapper. Contains page content --> 
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 align="right"><b>Pinarello-Prince </b></h1>
+                            <h1 align="right"><b><?php echo $productoDetalle[0]['nombre'] ?></b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -61,16 +71,6 @@
             </section>
 
             <!-- Main content -->
-
-            <?php 
-    $objDB = new ExtraerDatos();
-
-    $idp = $_GET["cp"];//variable url
-
-    $productoDetalle = array();
-    $productoDetalle = $objDB->productoDetalle($idp);
-    
-    ?>
             <section class="content">
                 <div class="row">
                     <div class="col-md-3">
