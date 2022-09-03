@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="sidebar-collapse sidebar-mini">
+<body>
 
     <?php include "includes/config.php"; ?>
 
@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>     
+                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
                             </ol>
                         </div>
                     </div>
@@ -86,7 +86,8 @@
                                 <div class="col-7">
                                     <h2 class="lead"><b><?php echo $rows["nombre"]; ?></b></h2>
                                     <!--en esta parte va el nombre -->
-                                    <p class="text-muted text-sm"><b>Descripción: </b>Desarrollador de software e inteligencia artificial. </p>
+                                    <p class="text-muted text-sm"><b>Descripción: </b>Desarrollador de software e
+                                        inteligencia artificial. </p>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i
                                                     class="fas fa-lg fa-building"></i></span> Dirección:

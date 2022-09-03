@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="sidebar-collapse sidebar-mini">
+<body>
 
     <?php include "includes2/config.php"; ?>
 
@@ -47,7 +47,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>PRODUCTOS</h1>
+                            <h1 align="right">Productos</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -63,7 +63,7 @@
 
             <section class="content">
 
-        <?php 
+                <?php 
             $objDB = new ExtraerDatos();
 
             $productos = array();
@@ -75,34 +75,35 @@
               
             //proceso para mostrar listas de datos
             foreach ($productos as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
-        ?>  
-        <div class="col-12 col-sm-6 col-md-6">
-                <div class="card bg-light">
-                    <div class="card-header text-muted border-bottom-0">
-                        <h2><?php echo $rows["nombre"]; ?></h2>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="row">
-                            <div class="col-7">                               
-                                <h3>Precio: <?php echo $rows["valorcomercial"]; ?></h3>             
-                            </div>
-                            <div class="col-5 text-center">
-                                <img src="../<?php echo $rows['foto']; ?>" alt=""
-                                    class="img-circle img-fluid">
+        ?>
+                <div class="col-12 col-sm-6 col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-header text-muted border-bottom-0">
+                            <h3><?php echo $rows["nombre"]; ?></h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h4>Precio: <?php echo $rows["valorcomercial"]; ?></h4>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
+                                        class="img-circle img-fluid">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="text-right">
-                            <a href="detalle_productos.php?c=<?php  echo $rows['id'];?>" class="btn btn-sm btn-primary">
-                               </i> Detalle
-                            </a>
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <a href="detalle_productos.php?c=<?php  echo $rows['id'];?>"
+                                    class="btn btn-sm btn-primary">
+                                    </i> Detalle
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        
-        <?php
+
+                <?php
             }//Fin del foreach
 
             echo "</div>";
@@ -115,7 +116,7 @@
             ?>
 
 
-                
+
 
 
             </section>
