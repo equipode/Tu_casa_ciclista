@@ -18,9 +18,11 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
 
-<body class="hold-transition login-page">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<!-- y de esta manera ↑ con la pagina de iniciar ↓ sesion o registrarse -->
+<body class="hold-transition login-page" id="fondo">
     <div class="login-box">
         <div class="login-logo">
             <a href="index.php"><b>Tienda</b>ciclista</a>

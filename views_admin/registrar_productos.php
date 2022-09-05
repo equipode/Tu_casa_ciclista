@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link href="../CSS/style.css" rel="stylesheet">
 </head>
 
 <!--class="sidebar-collapse sidebar-mini" -->
@@ -29,7 +31,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>" id="header">
             <?php 
       include "includes/header.php";
     ?>
@@ -37,14 +39,14 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="header">
             <?php 
     include "includes/lateralaside.php";
      ?>
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="fondo">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
@@ -63,7 +65,7 @@
             </section>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="content" id="fondo">
 
                 <div class="row">
                     <div class="col-md-3">
@@ -219,7 +221,7 @@
                                 </div> <!-- /.fin card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" id="btn_regist" class="btn btn-success">Registrar
+                                    <button type="submit" id="btn_regist" class="btn bg-primary">Registrar
                                         Producto</button>
                                     <button type="reset" class="btn btn-default">Limpiar</button>
                                 </div>
