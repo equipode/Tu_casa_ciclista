@@ -40,7 +40,7 @@
 // estas variables se utilizan a la hora de insertar datos en la base de datos en la variable ejecucion
               $monbre = $_POST["txt_nome"];
               $email = $_POST["txt_emai"];
-              $pas = $_POST["txt_pas"];
+              $pas = sha1 ($_POST["txt_pas"]);
               $dire = $_POST["txt_dir"];
               $telf = $_POST["txt_telf"];
 
