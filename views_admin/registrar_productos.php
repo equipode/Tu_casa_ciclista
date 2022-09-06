@@ -93,6 +93,8 @@
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
 
+
+
               //Verificamos que el usuario halla seleccionado archivos
               //y se procede a subir al servidor y elazarlo a la base de datos    
               $ext =""; $msgfile = ""; $logError="";
@@ -130,8 +132,8 @@
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto) 
-                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop' )  ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto, fecha, hora) 
+                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop', NOW(), NOW() )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
@@ -196,6 +198,15 @@
                                                 <label for="txt_vlrCom">Valor Comercial</label>
                                                 <input type="text" class="form-control" id="txt_vlrCom"
                                                     name="txt_vlrCom" placeholder="Valor">
+                                            </div>
+                                        </div>
+
+                                         <!-- Control Fecha -->
+                                         <div class="col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="txt_vlrCom">Fecha</label>
+                                                <input type="text" class="form-control" id="txt_fecha"
+                                                    name="txt_fecha" placeholder="Fecha y hora automatica">
                                             </div>
                                         </div>
 
