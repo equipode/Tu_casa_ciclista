@@ -1,0 +1,9 @@
+#fondo{
+  /*  background-image: url("https://carontestudio.com/img/caronte-web-estudio-logo.png");
+  pa una imagen local es igual solo que sin las comillas */
+background-color: aqua;
+}
+
+#header {
+    background-color: rgb(46, 193, 49);
+}
