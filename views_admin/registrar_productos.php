@@ -133,7 +133,7 @@
               $objDBO->conexion();
 
               $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto, fecha, hora) 
-                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop', NOW(), NOW() )  ");
+                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop', NOW(), NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
