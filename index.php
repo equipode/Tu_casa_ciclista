@@ -18,14 +18,14 @@
 
 <body>
 
-    <?php include "views/includes2/config.php"; ?>
+    <?php include "includesp/config.php"; ?>
 
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
             <?php 
-      include "views/includes2/header.php";
+      include "includesp/header.php";
     ?>
         </nav>
         <!-- /.navbar -->
@@ -33,7 +33,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
             <?php 
-    include "views/includes2/lateralaside.php";
+    include "includesp/lateralaside.php";
      ?>
         </aside>
 
@@ -70,7 +70,7 @@
 
         <footer class="main-footer">
             <?php 
-      include "includes2/footer.php";
+      include "includesp/footer.php";
      ?>
         </footer>
 
