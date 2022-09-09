@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link href="../CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +30,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>" id="header">
             <?php 
       include "includes/header.php";
     ?>
@@ -36,7 +38,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="lateral">
             <?php 
     include "includes/lateralaside.php";
      ?>
@@ -45,7 +47,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            <section class="content-header" id="fondo">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -75,7 +77,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
 ?>
 
-            <section class="content">
+            <section class="content" id="fondo">
 
                 <div class="row">
 
