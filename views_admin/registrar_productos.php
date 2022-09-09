@@ -39,7 +39,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="header">
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="lateral">
             <?php 
     include "includes/lateralaside.php";
      ?>
@@ -79,7 +79,7 @@
 
                         <!-- /.card-header -->
                         <div class="card">
-                            <div class="card-header bg-indigo">
+                            <div class="card-header bg-primary" class="Sub">
                                 <h3 class="card-title">Formulario de Datos </h3>
                             </div>
                             <!-- Para controles de formularios siempre usar etiqueta FORM -->
