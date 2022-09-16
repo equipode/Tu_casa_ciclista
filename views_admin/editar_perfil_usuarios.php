@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-    <link href="../CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +29,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>" id="header">
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
             <?php 
       include "includes/header.php";
     ?>
@@ -39,7 +37,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="lateral">
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
             <?php 
     include "includes/lateralaside.php";
      ?>
@@ -291,7 +289,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
         <footer class="main-footer">
             <?php 
-      include "includes2/footer.php";
+      include "includes/footer.php";
      ?>
         </footer>
 
