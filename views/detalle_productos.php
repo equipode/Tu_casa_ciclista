@@ -60,11 +60,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 align="right"><b><?php echo $productoDetalle[0]['nombre'] ?></b></h1>
+                            <h1 align="center"><b><?php echo $productoDetalle[0]['nombre'] ?></b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                                 <li class="breadcrumb-item active"><a href="productos.php">Productos</a></li>
                             </ol>
                         </div>
@@ -75,26 +75,26 @@
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-3 col-3">
 
                     </div>
-                    <div class="col-md-6">
-                        <img src="../<?php echo $productoDetalle[0]['foto'] ?>" width="600">
+                    <div class="col-md-6 col-sm-6 col-6">
+                        <img src="../<?php echo $productoDetalle[0]['foto'] ?>" width="200">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-3 col-3">
 
                     </div>
                 </div><br>
 
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-2 col-2">
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-sm-8 col-8">
                         <h2 align="center"><b>Descripcion</b></h2><br>
                         <h5><?php echo $productoDetalle[0]['descripcion'] ?></h5>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-2 col-2">
 
                     </div>
                 </div><br><br>
@@ -129,7 +129,7 @@
 
         <footer class="main-footer">
             <?php 
-      include "includes/footer.php";
+      include "includes2/footer.php";
      ?>
         </footer>
 
