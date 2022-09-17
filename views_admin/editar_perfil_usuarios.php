@@ -105,7 +105,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $telf = $_POST["txt_telef"];
               $direc = $_POST["txt_dire"];
               $email = $_POST["txt_email"];
-              $pass = $_POST["txt_pass"];
+              $pass =sha1 ($_POST["txt_pass"]);
               $fotou = $_POST["txt_foto"];
 
               //Verificamos que el usuario halla seleccionado archivos
@@ -289,7 +289,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
         <footer class="main-footer">
             <?php 
-      include "includes2/footer.php";
+      include "includes/footer.php";
      ?>
         </footer>
 

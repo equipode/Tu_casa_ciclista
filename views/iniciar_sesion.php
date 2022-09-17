@@ -25,7 +25,7 @@
 <body class="hold-transition login-page" id="fondo">
     <div class="login-box">
         <div class="login-logo">
-            <a href="index.php"><b>Tienda</b>ciclista</a>
+            <a href="../index.php"><b>Tienda</b>ciclista</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">

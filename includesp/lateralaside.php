@@ -1,6 +1,6 @@
 <!-- Brand Logo -->
 <a href="index.php" class="brand-link">
-  <img src="../imgs/logo.png"
+  <img src="imgs/logo.png"
        alt="AdminLTE Logo"
        class="brand-image img-circle elevation-3"
        style="opacity: .8">
@@ -12,10 +12,10 @@
   <!-- Sidebar user (optional) -->
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
-      <img src="../imgs/user.png" class="img-circle elevation-2" alt="Usuario">
+      <img src="imgs/user.png" class="img-circle elevation-2" alt="Usuario">
     </div>
     <div class="info">
-      <a href="iniciar_sesion.php" class="d-block">Usuario Nombre</a>
+      <a href="views/iniciar_sesion.php" class="d-block">Usuario Nombre</a>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="iniciar_sesion.php" class="nav-link">
+            <a href="views/iniciar_sesion.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Iniciar sesion</p>
             </a>
@@ -53,7 +53,7 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="productos.php" class="nav-link">
+            <a href="views/productos.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Listado</p>
             </a>

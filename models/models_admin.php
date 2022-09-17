@@ -14,6 +14,7 @@ class DBConfig {
     public function config(){ // class config
         $this->error = true;
     }
+	//function conexion($host='localhost',$user='id19468374_root',$pass='lh4%k_AIk5=z',$db='id19468374_qrs'){
 	function conexion($host='localhost',$user='root',$pass='12345678',$db='db_tienda_ciclista'){
 	//function conexion($host='localhost',$user='root',$pass='dayana2004',$db='db_tienda_ciclista'){  // connection function
 	    $this->error_message = "";

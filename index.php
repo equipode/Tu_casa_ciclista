@@ -5,35 +5,37 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="templates/AdminLTE-3.0.5/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link href="CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <?php include "includes2/config.php"; ?>
+    <?php include "includesp/config.php"; ?>
 
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>">
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>" id="header">
             <?php 
-      include "includes2/header.php";
+      include "includesp/header.php";
     ?>
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4">
+        <aside class="main-sidebar <?php echo $lateralStyle; ?> elevation-4" id="lateral">
             <?php 
-    include "includes2/lateralaside.php";
+    include "includesp/lateralaside.php";
      ?>
         </aside>
 
@@ -48,7 +50,9 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="../views_admin/index_admin.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="views_admin/index_admin.php">privada</a></li>
+                        
                             </ol>
                         </div>
                     </div>
@@ -68,7 +72,7 @@
 
         <footer class="main-footer">
             <?php 
-      include "includes2/footer.php";
+      include "includesp/footer.php";
      ?>
         </footer>
 
@@ -81,21 +85,21 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
+    <script src="templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="../templates/AdminLTE-3.0.5/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="templates/AdminLTE-3.0.5/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../templates/AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="templates/AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="../templates/AdminLTE-3.0.5/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
+    <script src="templates/AdminLTE-3.0.5/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
     </script>
     <!-- AdminLTE App -->
-    <script src="../templates/AdminLTE-3.0.5/dist/js/adminlte.js"></script>
+    <script src="templates/AdminLTE-3.0.5/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
+    <script src="templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
+    <script src="templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
 
 </body>
 
