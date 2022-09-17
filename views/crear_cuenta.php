@@ -67,12 +67,13 @@
             <section class="content" id="fondo">
 
                 <div class="row">
-                    <div class="col-md-3">
-
+                     <!-- este div es para centrar el formulario -->
+                    <div class="col-md-2">
+                            
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <!-- columna de contenido -->
 
 
@@ -137,7 +138,7 @@
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
-                         Producto ha sido creado correctamente
+                         Has sido registrado con exito
                       </div>";
               }else{ // Algo paso mal
                 echo "<div class='alert alert-danger'>
@@ -152,13 +153,13 @@
             ?>
 
 
-                            <form role="form" name="frm_prods" id="frm_prods" method="POST"
-                                action="crear_cuenta.php" enctype="multipart/form-data">
+                            <form role="form" name="frm_prods" id="frm_prods" method="POST" action="crear_cuenta.php"
+                                enctype="multipart/form-data">
                                 <div class="card-body">
 
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txt_nome">Nombre</label>
                                                 <input type="text" class="form-control" id="txt_nome" name="txt_nome"
@@ -167,19 +168,19 @@
                                         </div>
 
                                         <!-- Control Inputbox ejemplo -->
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txt_emai">correo</label>
-                                                <input type="text" class="form-control" id="txt_emai"
-                                                    name="txt_emai" placeholder="">
+                                                <input type="text" class="form-control" id="txt_emai" name="txt_emai"
+                                                    placeholder="">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txt_dir">Dirreción</label>
-                                                <textarea class="form-control" rows="3" placeholder=""
-                                                    name="txt_dir" id="txt_dir"></textarea>
+                                                <input type="text" class="form-control" id="txt_dir" name="txt_dir"
+                                                    placeholder=""></input>
                                             </div>
                                         </div>
 
@@ -187,8 +188,8 @@
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_pas">contraseña</label>
-                                                <input type="password" class="form-control" id="txt_pas"
-                                                    name="txt_pas" placeholder="">
+                                                <input type="password" class="form-control" id="txt_pas" name="txt_pas"
+                                                    placeholder="">
                                             </div>
                                         </div>
 
@@ -196,16 +197,16 @@
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_telf">telefono</label>
-                                                <input type="text" class="form-control" id="txt_telf"
-                                                    name="txt_telf" placeholder="Valor">
+                                                <input type="text" class="form-control" id="txt_telf" name="txt_telf"
+                                                    placeholder="">
                                             </div>
                                         </div>
 
-                                        
+
 
 
                                         <!-- Control FileUpload ejemplo -->
-                                        <div class="col-md- col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txtFile">Subir Foto</label>
                                                 <div class="input-group">
@@ -235,8 +236,8 @@
                         </div>
 
                     </div>
-
-                    <div class="col-md-3">
+                   <!-- este div es para centrar el formulario -->
+                    <div class="col-md-2">
 
                     </div>
 

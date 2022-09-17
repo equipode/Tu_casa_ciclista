@@ -12,7 +12,7 @@
   <!-- Sidebar user (optional) -->
   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
-      <img src="../imgs/usuarios/user.png" class="img-circle elevation-2" alt="Usuario">
+      <img src="../imgs/user.png" class="img-circle elevation-2" alt="Usuario">
     </div>
     <div class="info">
       <a href="iniciar_sesion.php" class="d-block">Usuario Nombre</a>

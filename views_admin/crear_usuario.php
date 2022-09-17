@@ -67,12 +67,13 @@
             <section class="content" id="fondo">
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <!--este div es pal espacio -->
+                    <div class="col-md-2">
 
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <!-- columna de contenido -->
 
 
@@ -137,7 +138,7 @@
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
-                         Producto ha sido creado correctamente
+                         Usuario registardo
                       </div>";
               }else{ // Algo paso mal
                 echo "<div class='alert alert-danger'>
@@ -158,7 +159,7 @@
 
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_nome">Nombre</label>
                                                 <input type="text" class="form-control" id="txt_nome" name="txt_nome"
@@ -167,7 +168,7 @@
                                         </div>
 
                                         <!-- Control Inputbox ejemplo -->
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_emai">correo</label>
                                                 <input type="text" class="form-control" id="txt_emai"
@@ -175,11 +176,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_dir">Dirreción</label>
-                                                <textarea class="form-control" rows="3" placeholder=""
-                                                    name="txt_dir" id="txt_dir"></textarea>
+                                                <input type="text" class="form-control"  
+                                                id="txt_dir" name="txt_dir"  placeholder=""></input>
                                             </div>
                                         </div>
 
@@ -205,7 +206,7 @@
 
 
                                         <!-- Control FileUpload ejemplo -->
-                                        <div class="col-md- col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txtFile">Subir Foto</label>
                                                 <div class="input-group">
@@ -235,8 +236,8 @@
                         </div>
 
                     </div>
-
-                    <div class="col-md-3">
+                        <!--este div es pal espacio -->
+                    <div class="col-md-2">
 
                     </div>
 
