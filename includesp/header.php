@@ -45,7 +45,7 @@
         <i class="fas fa-user mr-2"></i> Editar
       </a>
       <div class="dropdown-divider"></div>
-      <a href="logout.php" class="dropdown-item dropdown-footer">Cerrar Cesión</a>
+      <a href="views/iniciar_sesion.php" class="dropdown-item dropdown-footer">Cerrar Cesión</a>
     </div>
   </li>
   
