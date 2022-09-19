@@ -39,6 +39,7 @@
      ?>
         </aside>
 
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -56,7 +57,12 @@
                             </ol>
                         </div>
                     </div>
-                </div><!-- /.container-fluid -->
+                </div>
+                <!-- /.container-fluid -->
+                <?php 
+                include "includesp/slaider.php"
+                
+                ?>
             </section>
 
             <!-- Main content -->
