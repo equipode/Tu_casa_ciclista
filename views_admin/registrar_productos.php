@@ -69,12 +69,12 @@
             <section class="content" id="fondo">
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <!-- columna de contenido -->
 
 
@@ -160,7 +160,7 @@
 
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_refer">Referencia</label>
                                                 <input type="text" class="form-control" id="txt_refer" name="txt_refer"
@@ -169,7 +169,7 @@
                                         </div>
 
                                         <!-- Control Inputbox ejemplo -->
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Nombre">Nombre del Producto</label>
                                                 <input type="text" class="form-control" id="txt_Nombre"
@@ -177,7 +177,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descor">Descripción corta</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -185,7 +185,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descri">Coloque una Descripción</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -194,7 +194,7 @@
                                         </div>
 
                                         <!-- Control cantidad  -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_cantEx">Cantidad Existente</label>
                                                 <input type="text" class="form-control" id="txt_cantEx"
@@ -203,7 +203,7 @@
                                         </div>
 
                                         <!-- Control VALOR -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Valor Comercial</label>
                                                 <input type="text" class="form-control" id="txt_vlrCom"
@@ -212,7 +212,7 @@
                                         </div>
 
                                         <!-- Control Fecha -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Fecha</label>
                                                 <input type="text" class="form-control" id="txt_fecha" name="txt_fecha"
@@ -222,7 +222,7 @@
 
 
                                         <!-- Control FileUpload ejemplo -->
-                                        <div class="col-md- col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txtFile">Subir Foto</label>
                                                 <div class="input-group">
@@ -256,7 +256,7 @@
 
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
