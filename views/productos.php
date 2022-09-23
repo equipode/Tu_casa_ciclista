@@ -96,7 +96,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="text-right"><!-- el cod es la clave primaria de la clave productos -->
-                                <a href="detalle_productos.php?cp=<?php echo $rows['cod'];?>"
+                                <a href="productosens.php?cp=<?php echo $rows['cod'];?>"
                                     class="btn btn-sm btn-primary">
                                     </i> Detalle
                                 </a>
