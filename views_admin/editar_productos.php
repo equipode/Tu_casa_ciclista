@@ -85,12 +85,12 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
                 <div class="row">
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <!-- columna de contenido -->
 
 
@@ -177,7 +177,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_refer">Referencia</label>
                                                 <input type="text" class="form-control" id="txt_refer" name="txt_refer"
@@ -186,7 +186,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                         </div>
 
                                         <!-- Control Inputbox ejemplo -->
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Nombre">Nombre del Producto</label>
                                                 <input type="text" class="form-control" id="txt_Nombre"
@@ -195,7 +195,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descor">Descripción corta</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -204,7 +204,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descri">Coloque una Descripción</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -214,7 +214,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                         </div>
 
                                         <!-- Control cantidad  -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_cantEx">Cantidad Existente</label>
                                                 <input type="text" class="form-control" id="txt_cantEx"
@@ -224,7 +224,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                         </div>
 
                                         <!-- Control VALOR -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Valor Comercial</label>
                                                 <input type="text" class="form-control" id="txt_vlrCom"
@@ -234,11 +234,11 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                         </div>
 
 
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <img src="../<?php echo $producto[0]['foto']; ?>" width="100">
                                         </div>
                                         <!-- Control FileUpload ejemplo -->
-                                        <div class="col-md- col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txtFile">Subir Foto</label>
                                                 <div class="input-group">
@@ -271,7 +271,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                             </form> <!-- /.fin Form -->
 
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
 
                         </div>
 
