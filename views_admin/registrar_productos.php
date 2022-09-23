@@ -1,6 +1,7 @@
 <?php 
   require ("../models/models_admin.php");
   date_default_timezone_set("America/Bogota");
+  include "../controllers/controller_consultas_backend.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -90,6 +91,7 @@
               $refer = $_POST["txt_refer"];
               $nombr = $_POST["txt_Nombre"];
               $descr = $_POST["txt_Descri"];
+              $descor = $_POST["txt_Descor"];
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
 
@@ -132,8 +134,8 @@
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, cantidad, valorcomercial, foto, fecha, hora) 
-                                                                values('$refer', '$nombr', '$descr', $canti, $vlrcm, '$fotop', NOW(), NOW() - 5 )  ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto, fecha, hora) 
+                                                                values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', NOW(), NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
@@ -177,6 +179,14 @@
 
                                         <div class="col-md-12 col-sm-12 col-12">
                                             <div class="form-group">
+                                                <label for="txt_Descor">Descripción corta</label>
+                                                <textarea class="form-control" rows="3" placeholder="Describa..."
+                                                    name="txt_Descor" id="txt_Descor"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-12">
+                                            <div class="form-group">
                                                 <label for="txt_Descri">Coloque una Descripción</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
                                                     name="txt_Descri" id="txt_Descri"></textarea>
@@ -201,12 +211,12 @@
                                             </div>
                                         </div>
 
-                                         <!-- Control Fecha -->
-                                         <div class="col-md-6 col-sm-6 col-12">
+                                        <!-- Control Fecha -->
+                                        <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Fecha</label>
-                                                <input type="text" class="form-control" id="txt_fecha"
-                                                    name="txt_fecha" placeholder="Fecha y hora automatica">
+                                                <input type="text" class="form-control" id="txt_fecha" name="txt_fecha"
+                                                    placeholder="Fecha y hora automatica">
                                             </div>
                                         </div>
 
@@ -237,7 +247,10 @@
                                     <button type="reset" class="btn btn-default">Limpiar</button>
                                 </div>
 
-                            </form> <!-- /.fin Form -->
+                            </form>
+                            <!-- /.fin Form -->
+
+
 
                         </div>
 
@@ -246,6 +259,60 @@
                     <div class="col-md-3">
 
                     </div>
+
+                    <?php 
+            $objDB = new ExtraerDatos();
+
+            $productos = array();
+            $productos = $objDB->listadoProductos();
+
+            if($productos){
+
+              echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+            foreach ($productos as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+                    <div class="col-12 col-sm-6 col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-header text-muted border-bottom-0">
+                                <h3><?php echo $rows["nombre"]; ?></h3>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h4>Precio: <?php echo $rows["valorcomercial"]; ?></h4>
+                                    </div>
+                                    <div class="col-5 text-center">
+                                        <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
+                                            class="img-circle img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <!-- el cod es la clave primaria de la clave productos -->
+                                    <a href="detalle_productos.php?cp=<?php echo $rows['cod'];?>"
+                                        class="btn btn-sm btn-primary">
+                                        </i> Detalle
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+            }//Fin del foreach
+
+            echo "</div>";
+
+            }else{
+              echo "No hay datos o no se pudo conectar a la fuente";
+            }
+            
+            
+            ?>
+
 
 
                     <!--  <div class="col-md-6">

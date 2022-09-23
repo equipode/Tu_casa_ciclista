@@ -108,6 +108,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $refer = $_POST["txt_refer"];
               $nombr = $_POST["txt_Nombre"];
               $descr = $_POST["txt_Descri"];
+              $descor = $_POST["txt_Descor"];
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
               $fotop = $_POST["txt_foto"];
@@ -149,7 +150,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', cantidad=$canti, valorcomercial=$vlrcm, foto='$fotop' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', descripcioncorta='$descor', cantidad=$canti, valorcomercial=$vlrcm, foto='$fotop' 
                                                  WHERE cod=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -191,6 +192,15 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                                 <input type="text" class="form-control" id="txt_Nombre"
                                                     name="txt_Nombre" placeholder="Nombre"
                                                     value="<?php echo $producto[0]['nombre']; ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 col-12">
+                                            <div class="form-group">
+                                                <label for="txt_Descor">Descripción corta</label>
+                                                <textarea class="form-control" rows="3" placeholder="Describa..."
+                                                    name="txt_Descor"
+                                                    id="txt_Descri"><?php echo $producto[0]['descripcioncorta']; ?></textarea>
                                             </div>
                                         </div>
 
