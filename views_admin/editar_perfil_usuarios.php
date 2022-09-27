@@ -150,7 +150,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
-                         Cliente  ha sido Actualizado correctamente
+                         Usuario  ha sido Actualizado correctamente
                       </div>";
               }else{ // Algo paso mal
                 echo "<div class='alert alert-danger'>
