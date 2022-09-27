@@ -287,6 +287,11 @@
                                         <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
                                             class="img-circle img-fluid">
                                     </div>
+                                    <div class="col-5 text-center">
+                                        <img src="../<?php echo $rows['foto2']; ?>" alt="" width="160px" height="160px"
+                                            class="img-circle img-fluid">
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="card-footer">

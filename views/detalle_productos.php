@@ -45,7 +45,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            
+
 
             <!-- Main content -->
 
@@ -76,16 +76,16 @@
                                             src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb"><img
-                                            src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
+                                            src="../<?php echo $productoDetalle[0]['foto2'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb"><img
-                                            src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
+                                            src="../<?php echo $productoDetalle[0]['foto3'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb"><img
-                                            src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
+                                            src="../<?php echo $productoDetalle[0]['foto4'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb"><img
-                                            src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
+                                            src="../<?php echo $productoDetalle[0]['foto5'] ?>" alt="Product Image">
                                     </div>
                                 </div>
                             </div>

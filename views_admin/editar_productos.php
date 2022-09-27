@@ -250,6 +250,17 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="txtFile">Subir Foto</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File"
+                                                            name="txt_File">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
 
@@ -267,6 +278,8 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                     value="<?php echo $producto[0]['cod']; ?>">
                                 <input type="hidden" name="txt_foto" id="txt_foto"
                                     value="<?php echo $producto[0]['foto']; ?>">
+                                <input type="hidden" name="txt_foto" id="txt_foto"
+                                    value="<?php echo $producto[0]['foto2']; ?>">
 
                             </form> <!-- /.fin Form -->
 
