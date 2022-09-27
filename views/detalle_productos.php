@@ -75,7 +75,7 @@
                                     <div class="product-image-thumb active"><img
                                             src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
                                     </div>
-                                    <div class="product-image-thumb"><img
+                                    <div class="product-image-thumb active"><img
                                             src="../<?php echo $productoDetalle[0]['foto2'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb"><img

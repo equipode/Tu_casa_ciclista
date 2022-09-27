@@ -112,6 +112,10 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
               $fotop = $_POST["txt_foto"];
+              $fotop2 = $_POST["txt_foto2"];
+              $fotop3 = $_POST["txt_foto3"];
+              $fotop4 = $_POST["txt_foto4"];
+              $fotop5 = $_POST["txt_foto5"];
 
               //Verificamos que el usuario halla seleccionado archivos
               //y se procede a subir al servidor y elazarlo a la base de datos    
@@ -146,11 +150,149 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
               //echo $msgfile;
 
+              //echo $msgfile imagen2;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File2"]['name']) && $_FILES["txt_File2"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File2"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File2"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop2 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File2"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File2"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop2.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop2 = $fotop2.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen3;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File3"]['name']) && $_FILES["txt_File3"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File3"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File3"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop3 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File3"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File3"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop3.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop3 = $fotop3.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen4;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File4"]['name']) && $_FILES["txt_File4"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File4"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File4"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop4 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File4"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File4"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop4.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop4 = $fotop4.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen5;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File5"]['name']) && $_FILES["txt_File5"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File5"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File5"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop5 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File5"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File5"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop5.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop5 = $fotop5.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+
               $objDBO = new DBConfig();
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', descripcioncorta='$descor', cantidad=$canti, valorcomercial=$vlrcm, foto='$fotop' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', descripcioncorta='$descor', cantidad=$canti, valorcomercial=$vlrcm, 
+              foto='$fotop', foto2='$fotop2', foto3='$fotop3', foto4='$fotop4', foto5='$fotop5'
                                                  WHERE cod=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -233,8 +375,9 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                             </div>
                                         </div>
 
-
+                                        <!-- IMAGEN 1 -->
                                         <div class="col-md-6 col-sm-6 col-6">
+                                            <br>
                                             <img src="../<?php echo $producto[0]['foto']; ?>" width="100">
                                         </div>
                                         <!-- Control FileUpload ejemplo -->
@@ -250,18 +393,89 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <!-- IMAGEN2 -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <br>
+                                            <img src="../<?php echo $producto[0]['foto2']; ?>" width="100">
+                                        </div>
+
+                                        <!-- Control FileUpload ejemplo -->
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
-                                                <label for="txtFile">Subir Foto</label>
+                                                <label for="txtFile2">Subir Foto 2</label>
                                                 <div class="input-group">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="txt_File"
-                                                            name="txt_File">
+                                                        <input type="file" class="custom-file-input" id="txt_File2"
+                                                            name="txt_File2">
                                                         <label class="custom-file-label"
-                                                            for="txt_File">Seleccionar</label>
+                                                            for="txt_File2">Seleccionar</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- IMAGEN 3 -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <br>
+                                            <img src="../<?php echo $producto[0]['foto3']; ?>" width="100">
+                                        </div>
+                                        <!-- Control FileUpload ejemplo -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile3">Subir Foto 3</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File3"
+                                                            name="txt_File3">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File3">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- IMAGEN 4 -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <br>
+                                            <img src="../<?php echo $producto[0]['foto4']; ?>" width="100">
+                                        </div>
+                                        <!-- Control FileUpload ejemplo -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile4">Subir Foto 4</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File4"
+                                                            name="txt_File4">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File4">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- IMAGEN 5 -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <br>
+                                            <img src="../<?php echo $producto[0]['foto5']; ?>" width="100">
+                                        </div>
+                                        <!-- Control FileUpload ejemplo -->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile5">Subir Foto 5</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File5"
+                                                            name="txt_File5">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File5">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
 
 
                                     </div> <!-- /.fin row -->
@@ -276,10 +490,21 @@ if(isset($_GET["cp"])){//URL PERFECTA
 
                                 <input type="hidden" name="txt_codprod" id="txt_codprod"
                                     value="<?php echo $producto[0]['cod']; ?>">
+
                                 <input type="hidden" name="txt_foto" id="txt_foto"
                                     value="<?php echo $producto[0]['foto']; ?>">
-                                <input type="hidden" name="txt_foto" id="txt_foto"
+
+                                <input type="hidden" name="txt_foto2" id="txt_foto2"
                                     value="<?php echo $producto[0]['foto2']; ?>">
+
+                                <input type="hidden" name="txt_foto3" id="txt_foto3"
+                                    value="<?php echo $producto[0]['foto3']; ?>">
+
+                                <input type="hidden" name="txt_foto4" id="txt_foto4"
+                                    value="<?php echo $producto[0]['foto4']; ?>">
+
+                                <input type="hidden" name="txt_foto5" id="txt_foto5"
+                                    value="<?php echo $producto[0]['foto5']; ?>">
 
                             </form> <!-- /.fin Form -->
 

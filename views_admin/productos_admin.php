@@ -96,6 +96,9 @@
                                             <th>VALOR COMERCIAL</th>
                                             <th>FOTO</th>
                                             <th>FOTO2</th>
+                                            <th>FOTO3</th>
+                                            <th>FOTO4</th>
+                                            <th>FOTO5</th>
                                             <th style="width: 40px">Accion</th>
                                         </tr>
                                     </thead>
@@ -112,7 +115,10 @@
                                             <td><?php echo $rows["cantidad"]; ?></td>
                                             <td><?php echo $rows["valorcomercial"]; ?></td>
                                             <td><img src="../<?php echo $rows['foto']; ?>" width="50"></td>
-                                            <td><img src="../imgs/productos/Prince5.jpg" width="50"></td>
+                                            <td><img src="../<?php echo $rows['foto2']; ?>" width="50"></td>
+                                            <td><img src="../<?php echo $rows['foto3']; ?>" width="50"></td>
+                                            <td><img src="../<?php echo $rows['foto4']; ?>" width="50"></td>
+                                            <td><img src="../<?php echo $rows['foto5']; ?>" width="50"></td>
                                             <td>
 
                                                 <a href="editar_productos.php?cp=<?php echo $rows['cod']; ?>"
