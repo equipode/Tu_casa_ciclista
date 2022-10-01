@@ -69,12 +69,12 @@
             <section class="content" id="fondo">
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <!-- columna de contenido -->
 
 
@@ -128,14 +128,148 @@
                 } 
               }
 
+              //echo $msgfile imagen2;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File2"]['name']) && $_FILES["txt_File2"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File2"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File2"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop2 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File2"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File2"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop2.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop2 = $fotop2.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen3;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File3"]['name']) && $_FILES["txt_File3"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File3"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File3"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop3 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File3"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File3"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop3.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop3 = $fotop3.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen4;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File4"]['name']) && $_FILES["txt_File4"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File4"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File4"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop4 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File4"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File4"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop4.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop4 = $fotop4.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
+              //echo $msgfile;
+
+               //echo $msgfile imagen5;
+
+              //Verificamos que el usuario halla seleccionado archivos
+              //y se procede a subir al servidor y elazarlo a la base de datos    
+              $ext =""; $msgfile = ""; $logError="";
+              if(isset($_FILES["txt_File5"]['name']) && $_FILES["txt_File5"]['name']!=null ){           
+                $extens = array('.jpeg'=>'JPEG','.JPEG'=>'JPEG','.jpg' => 'JPG', '.png' => 'PNG', '.JPG' => 'JPG', '.PNG' => 'PNG');
+                $ext = strrchr(basename($_FILES["txt_File5"]['name']),".");        
+                if($extens[$ext]){            
+                  if($_FILES["txt_File5"]['error'] == UPLOAD_ERR_OK ){ //Si el archivo se paso correctamente Continuamos 
+                    $fotop5 = "imgs/productos/";
+                    $postname = date("Y").date("m").date("d")."_".date("H").date("i");
+                    $fullname = explode(".",basename($_FILES["txt_File5"]['name'])); // variabe temporal para sacar el nombre y separarlo de la extension
+                    $NombreOriginal = $fullname[0];//Obtenemos el nombre original del archivo
+                    $temporal = $_FILES["txt_File5"]['tmp_name']; //Obtenemos la ruta Original del archivo
+                    $Destino = "../".$fotop5.$NombreOriginal."_".$postname.$ext; //Creamos una ruta de destino con la variable ruta y el nombre original del archivo 
+                    $fotop5 = $fotop5.$NombreOriginal."_".$postname.$ext; //Esto se guarda en el campo imagend e la base de dato
+                    if(copy($temporal, $Destino)){ //Movemos el archivo temporal a la ruta especificada               
+                      $msgfile = "Imagen subida.";
+                    }else{
+                      $msgfile .= "<span class='label label-danger'>la imagen del Producto .</span>";
+                      $logError = "No se pudo subir la imagen del Producto, puede ser por tamaño. \n";
+                    }  
+                  }else{
+                    $msgfile .= "<span class='label label-danger'>Error al transferirse el archivo.</span> ";
+                  }
+
+                }else{
+                  $msgfile .= "<span class='label label-danger'><i class='fa fa-file-o'></i> Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext].</span>"  ;  
+                  $logError .="Por seguridad se bloqueo el envío del archivo con extension no permitida [$ext]. \n";
+                } 
+              }
               //echo $msgfile;
 
               $objDBO = new DBConfig();
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto, fecha, hora) 
-                                                                values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', NOW(), NOW() - 5 )  ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto, foto2, foto3, foto4, foto5, fecha, hora) 
+                                                                values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', '$fotop2', '$fotop3', '$fotop4', '$fotop5', NOW(), NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
@@ -160,7 +294,7 @@
 
                                     <div class="row">
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_refer">Referencia</label>
                                                 <input type="text" class="form-control" id="txt_refer" name="txt_refer"
@@ -169,7 +303,7 @@
                                         </div>
 
                                         <!-- Control Inputbox ejemplo -->
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Nombre">Nombre del Producto</label>
                                                 <input type="text" class="form-control" id="txt_Nombre"
@@ -177,7 +311,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descor">Descripción corta</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -185,7 +319,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_Descri">Coloque una Descripción</label>
                                                 <textarea class="form-control" rows="3" placeholder="Describa..."
@@ -194,7 +328,7 @@
                                         </div>
 
                                         <!-- Control cantidad  -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_cantEx">Cantidad Existente</label>
                                                 <input type="text" class="form-control" id="txt_cantEx"
@@ -203,7 +337,7 @@
                                         </div>
 
                                         <!-- Control VALOR -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Valor Comercial</label>
                                                 <input type="text" class="form-control" id="txt_vlrCom"
@@ -212,7 +346,7 @@
                                         </div>
 
                                         <!-- Control Fecha -->
-                                        <div class="col-md-6 col-sm-6 col-12">
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Fecha</label>
                                                 <input type="text" class="form-control" id="txt_fecha" name="txt_fecha"
@@ -221,8 +355,8 @@
                                         </div>
 
 
-                                        <!-- Control FileUpload ejemplo -->
-                                        <div class="col-md- col-sm-12 col-12">
+                                        <!-- Imagen 1 -->
+                                        <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txtFile">Subir Foto</label>
                                                 <div class="input-group">
@@ -231,6 +365,66 @@
                                                             name="txt_File">
                                                         <label class="custom-file-label"
                                                             for="txt_File">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--imagen2-->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile2">Subir 2 Foto</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File2"
+                                                            name="txt_File2">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File2">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--imagen3-->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile3">Subir 3 Foto</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File3"
+                                                            name="txt_File3">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File3">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--imagen4-->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile4">Subir 4 Foto</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File4"
+                                                            name="txt_File4">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File4">Seleccionar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--imagen5-->
+                                        <div class="col-md-6 col-sm-6 col-6">
+                                            <div class="form-group">
+                                                <label for="txtFile5">Subir 5 Foto</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="txt_File5"
+                                                            name="txt_File5">
+                                                        <label class="custom-file-label"
+                                                            for="txt_File5">Seleccionar</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -256,7 +450,7 @@
 
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
@@ -287,6 +481,11 @@
                                         <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
                                             class="img-circle img-fluid">
                                     </div>
+                                    <div class="col-5 text-center">
+                                        <img src="../<?php echo $rows['foto2']; ?>" alt="" width="160px" height="160px"
+                                            class="img-circle img-fluid">
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="card-footer">
