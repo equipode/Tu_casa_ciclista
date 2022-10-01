@@ -15,8 +15,8 @@ class DBConfig {
         $this->error = true;
     }
 	//function conexion($host='localhost',$user='id19559447_root',$pass='7~mOu=HXi7@Am^&t',$db='id19559447_db_tienda_ciclista'){
-	//function conexion($host='localhost',$user='root',$pass='12345678',$db='db_tienda_ciclista'){
-	function conexion($host='localhost',$user='root',$pass='dayana2004',$db='db_tienda_ciclista'){  // connection function
+	function conexion($host='localhost',$user='root',$pass='12345678',$db='db_tienda_ciclista'){
+	//function conexion($host='localhost',$user='root',$pass='dayana2004',$db='db_tienda_ciclista'){  // connection function
 	    $this->error_message = "";
         $this->host = $host;
         $this->user = $user;

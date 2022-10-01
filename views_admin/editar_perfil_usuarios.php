@@ -145,7 +145,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$nomb', telefono='$telf', direccion='$direc', usuario='$email', pass='$pass', foto='$fotou' 
+              $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$nomb', telefono='$telf', direccion='$direc', usuario='$email', password='$pass', foto='$fotou' 
                                                  WHERE id=$codp ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
@@ -212,7 +212,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Contraseña</label>
                                                 <input type="text" class="form-control" id="txt_pass" name="txt_pass"
-                                                    placeholder="" value="<?php echo $usuario[0]['pass']; ?>">
+                                                    placeholder="" value="<?php echo $usuario[0]['password']; ?>">
                                             </div>
                                         </div>
 

@@ -1,3 +1,52 @@
+<?php
+	
+	require "../models/conexion.php";
+	
+	session_start();
+	
+	if($_POST){
+		
+		$usuario = $_POST['usuario'];
+		$password = $_POST['password'];
+		
+		$sql = "SELECT id, password, nombre FROM info_usuarios WHERE usuario='$usuario'";
+		//echo $sql;
+		$resultado = $mysqli->query($sql);
+		$num = $resultado->num_rows;
+		
+		if($num>0){
+			$row = $resultado->fetch_assoc();
+			$password_bd = $row['password'];
+			
+			$pass_c = sha1($password);
+			
+			if($password_bd == $pass_c){
+				
+				$_SESSION['id'] = $row['id'];
+				$_SESSION['nombre'] = $row['nombre'];
+				//$_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+				
+				header("Location: ../views_admin/index_admin.php");
+				
+			} else {
+			
+			echo "La contraseña no coincide";
+			
+			}
+			
+			
+			} else {
+			echo "NO existe usuario";
+		}
+		
+		
+		
+	}
+	
+	
+	
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -32,9 +81,9 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
 
-                <form action="iniciar_sesion.php" method="post">
+                <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Correo">
+                        <input type="email" class="form-control" placeholder="Correo" id="usuario" name="usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -42,7 +91,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

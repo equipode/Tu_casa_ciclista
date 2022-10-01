@@ -133,7 +133,7 @@
               $objDBO->conexion();
 
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, telefono, direccion, usuario, pass, foto)
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, telefono, direccion, usuario, password, foto)
                                                                 values('$monbre', '$telf', '$dire', '$email', '$pas', '$fotop') ");
 
               if($ejecucion){ // Todo se ejecuto correctamente

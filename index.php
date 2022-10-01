@@ -52,7 +52,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                                <li class="breadcrumb-item"><a href="views_admin/index_admin.php">privada</a></li>
+                                <li class="breadcrumb-item"><a href="views/iniciar_sesion.php">Login</a></li>
                         
                             </ol>
                         </div>
