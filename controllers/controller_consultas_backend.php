@@ -18,6 +18,7 @@ class ConsultasDB extends DBConfig {
 
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
+*ojeto extraer datos
 */
 class ExtraerDatos extends ConsultasDB
 {
