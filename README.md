@@ -1,7 +1,7 @@
 # Tu_casa_ciclista
 Tienda virtual
 
-1. El primer paso que hicimos para desarrollar este proyecto fue el diseño del mapa de navegación y el de tu casa ciclista
+1.El primer paso que hicimos para desarrollar este proyecto fue el diseño del mapa de navegación y el de tu casa ciclista
 
 2.Se descargo el framework que nos proporciono el proporciono el profesor, luego se procedio a crear el starter y de alli el resto de paginas que incliomos en el mapa 
 de navegación.
