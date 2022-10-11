@@ -18,12 +18,13 @@ class ConsultasDB extends DBConfig {
 
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
+*ojeto extraer datos
 */
 class ExtraerDatos extends ConsultasDB
 {
 
 	
-	//MUESTRA LISTADO DE USUARIOS
+	//MUESTRA LISTADO DE CLIENTES
 	function listadoclientes($start=0, $regsCant = 0){
 		$sql = "SELECT * FROM info_clientes";
 		if ($regsCant > 0 )
