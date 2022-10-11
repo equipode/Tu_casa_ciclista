@@ -15,6 +15,7 @@
 
 <head>
     <title><?php echo $productoDetalle[0]['nombre'] ?></title>
+    <link rel="icon" href="../imgs/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
