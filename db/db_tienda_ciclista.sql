@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `info_clientes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
-  `telefono` varchar(50) DEFAULT NULL,
+  `telefono` bigint(50) DEFAULT NULL,
   `direccion` varchar(50) DEFAULT NULL,
   `usuario` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
