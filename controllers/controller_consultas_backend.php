@@ -18,7 +18,6 @@ class ConsultasDB extends DBConfig {
 
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
-*ojeto extraer datos
 */
 class ExtraerDatos extends ConsultasDB
 {
@@ -45,16 +44,6 @@ class ExtraerDatos extends ConsultasDB
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
-
-	//MUESTRA LISTADO DE ESTUDIANTES
-	function listadoestudiantes($start=0, $regsCant = 0){
-		$sql = "SELECT * FROM registro_asistencia";
-		if ($regsCant > 0 )
-			 $sql = "SELECT * from registro_asistencia $start,$regsCant";
-		$lista = $this->consulta_generales($sql);	
-		return $lista;
-	}
-
 
 	//listado de productos
 	function listadoProductos($start=0, $regsCant = 0){
@@ -84,28 +73,28 @@ class ExtraerDatos extends ConsultasDB
 	}
 
 	//Detalle de productos
-	function productoPorId($idFilter){
+	function productoPorId($idFilter, $start=0, $regsCant=0){
 		$sql = "SELECT * from info_productos where cod=$idFilter";
 		if ($regsCant > 0)
-		      $sql = "SELECT * from info_productos where cod=$idFilter $start, $regsCant";
+		      $sql = "SELECT * from info_productos where cod=$idFilter $start,$regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
 
 		//Detalle de usuarios
-		function usuariosPorId($idFilter){
+		function usuariosPorId($idFilter, $start=0, $regsCant=0){
 			$sql = "SELECT * from info_usuarios where id=$idFilter";
 			if ($regsCant > 0)
-				  $sql = "SELECT * from info_usuarios where id=$idFilter $start, $regsCant";
+				  $sql = "SELECT * from info_usuarios where id=$idFilter $start,$regsCant";
 			$lista = $this->consulta_generales($sql);	
 			return $lista;
 		}
 
 	//Detalle de productos segun concidencia
-	function productoPorIdCoinc($idFilter){
+	function productoPorIdCoinc($idFilter, $start=0, $regsCant=0){
 		$sql = "SELECT * from info_productos where nombre like '%$idFilter%' ";
 		if ($regsCant > 0)
-		      $sql = "SELECT * from info_productos where nombre like '%$idFilter%' $start, $regsCant";
+		      $sql = "SELECT * from info_productos where nombre like '%$idFilter%' $start,$regsCant";
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}

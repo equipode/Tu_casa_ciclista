@@ -27,3 +27,6 @@ que vamos a subir el sitio web.
 12.se estuvo buscando información para poner en la base de datos, fotos.
 
 13.se puso en funcionamiento el login del sitio web para usuarios administrativos.
+
+14.Tambien se comenzo ha integrar los diseños del mapa de navegación y de la base de datos, utilizando plantUml,
+en la carpeta Mapasdenavegación.
