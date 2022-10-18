@@ -1,0 +1,68 @@
+@startuml mapa
+(Login) as (log)
+
+(Crear_cuenta) as (Use)
+
+(Productos) as (prod)
+(Detalle_productos) as (det)
+
+(Comprar) as (car)
+(Carrito_de_compras) as (carr_c)
+
+(index_amind) as (log1)
+(Iniciar_sesion) as (log2)
+
+
+(index) --|> (log)
+(index) --|> (Use)
+(index) --|> (prod)
+
+(log) --|> (log1)
+(log) --|> (log2)
+
+(prod) --|> (det)
+(det) --|> (log2)
+
+(log2) --|> (car)
+(car) --|> (carr_c)
+
+(Productos_admin) as (prod_admin)
+(Registrar) as (regisp)
+(Editar) as (editp)
+(Eliminar) as (elip)
+
+(Clientes_admin) as (cli_admin)
+(Editar_Perfil) as (editc)
+(Resetear_cuenta) as (resetc)
+(Eliminar_cuenta) as (elic)
+
+(Admin_Compras) as (comp_admin)
+(Informe) as (infor)
+
+(Usuarios) as (user)
+(Editar_Perfil) as (editu)
+(Resetear_cuenta) as (resetu)
+(Eliminar_cuenta) as (eliu)
+
+(log1) --|> (prod_admin)
+(prod_admin) --|> (regisp)
+(prod_admin) --|> (editp)
+(prod_admin) --|> (elip)
+
+
+(log1) --|> (cli_admin)
+(cli_admin) --|> (editc)
+(cli_admin) --|> (resetc)
+(cli_admin) --|> (elic)
+
+
+(log1) --|> (comp_admin)
+(comp_admin) --|> (infor)
+
+(log1) --|> (user)
+(cli_admin) --|> (editu)
+(cli_admin) --|> (resetu)
+(cli_admin) --|> (eliu)
+
+
+@enduml
