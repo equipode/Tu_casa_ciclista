@@ -69,7 +69,7 @@
             <section class="content">
 
             
-         <h1>Hola que tal</h1>
+         <h1>Hola, aficionados ciclistas</h1>
 
 
 
