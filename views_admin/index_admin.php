@@ -15,9 +15,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     
-    <!--Estilos para los graficos -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../CSS/graficos.css">
+    
 
     <!--Estilos de las paginas web -->
     <link href="../CSS/style.css" rel="stylesheet">
@@ -65,23 +63,7 @@
 
             <!-- Main content -->
             <section class="content">
-                <form id="form-param">
-                    <div class="container">
-                        <div>
-                            <input type="text" class="parametro" placeholder="parametro">
-                            <input type="number" class="valor" placeholder="valor">
-                        </div>
-                        <div>
-                            <input type="text" class="parametro" placeholder="parametro">
-                            <input type="number" class="valor" placeholder="valor">
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <button type="button" class="addParam">Agregar parametro</button>
-                        <button type="button" class="ShowResults">Mostrar Resultados</button>
-                    </div>
-                </form>
-                <div id="grafico"></div>
+                
 
 
 
@@ -105,7 +87,7 @@
     <!-- ./wrapper -->
 
     <!-- Graficos-->
-    <script src="../scripts/graficos.js"></script>
+
 
     <!-- jQuery -->
     <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
