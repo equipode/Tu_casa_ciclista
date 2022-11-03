@@ -3,6 +3,12 @@
   date_default_timezone_set("America/Bogota");
   include "../controllers/controller_consultas_backend.php";
 ?>
+
+<?php 
+
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 

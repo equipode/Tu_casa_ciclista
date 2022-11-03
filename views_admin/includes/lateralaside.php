@@ -15,7 +15,7 @@
       <img src="../imgs/user.png" class="img-circle elevation-2" alt="Usuario">
     </div>
     <div class="info">
-      <a href="#" class="d-block">Usuario Nombre</a>
+      <a href="#" class="d-block"><?php echo $nombre; ?></a>
     </div>
   </div>
 

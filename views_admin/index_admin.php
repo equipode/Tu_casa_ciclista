@@ -1,3 +1,11 @@
+<?php 
+
+ session_start();
+
+ $nombre = $_SESSION['nombre'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -64,7 +72,7 @@
             <!-- Main content -->
             <section class="content">
                 
-
+              <H1>Hola <?php echo $nombre; ?></H1>
 
 
             </section>

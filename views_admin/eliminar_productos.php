@@ -3,6 +3,11 @@
   include "../controllers/controller_consultas_backend_editodel.php";  
   date_default_timezone_set("America/Bogota");
 ?>
+
+<?php 
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 

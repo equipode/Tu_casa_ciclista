@@ -2,6 +2,12 @@
   require ("../models/models_admin.php");
   date_default_timezone_set("America/Bogota");
 ?>
+
+<?php 
+include "../controllers/controller_consultas_backend.php";
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 

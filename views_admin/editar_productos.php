@@ -4,6 +4,11 @@
   //se llama al otro controller pa que no valla a ver envio de datos
   date_default_timezone_set("America/Bogota");
 ?>
+
+<?php 
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 

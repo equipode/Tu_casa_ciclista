@@ -1,6 +1,12 @@
 <?php 
   include "../controllers/controller_consultas_backend.php";
 ?>
+<!-- debe estar separado pa que no haiga conflitos -->
+<?php 
+
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 

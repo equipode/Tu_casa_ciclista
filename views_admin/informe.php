@@ -2,6 +2,11 @@
   include "../controllers/controller_consultas_backend.php";
 ?>
 
+<?php 
+
+$nombre = $_SESSION['nombre'];
+
+?>
 <!DOCTYPE html>
 <html>
 
