@@ -278,11 +278,21 @@ $nombre = $_SESSION['nombre'];
                                                                 values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', '$fotop2', '$fotop3', '$fotop4', '$fotop5', NOW(), NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
+                echo "
+                <audio controls='' autoplay='' id='ocultar'>
+                <source src='../Audios/sony1.mp3' type='audio/mp3'>
+                </audio>
+                <div class='alert alert-success'>
                          Producto ha sido creado correctamente
-                      </div>";
+                      </div>
+                      ";
               }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
+                echo "
+                <audio controls='' autoplay='' id='ocultar'>
+                <source src='../Audios/sony2.mp3' type='audio/mp3'>
+                </audio>
+       
+                <div class='alert alert-danger'>
                          Ha ocurrido un error inexperado
                       </div>";
               }

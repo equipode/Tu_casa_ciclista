@@ -4,6 +4,10 @@
 /*background-color: aqua;*/
 }
 
+#ocultar{
+  visibility: hidden;
+}
+
 h1{
   color: #2e3e3e;
 }
