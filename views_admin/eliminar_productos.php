@@ -114,17 +114,25 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $ejecucion = $objDBO->Operaciones("DELETE FROM info_productos
                                                  WHERE cod=$codp ");
 
-              if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
-                         Producto ha sido Eliminado correctamente<br>                         
-                      </div>
-                      <a href='productos_admin.php' class='btn btn-default'>Ver Listado </a>";
+if($ejecucion){ // Todo se ejecuto correctamente
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony1.mp3' type='audio/mp3'>
+    </audio>
+    <div class='alert alert-success'>
+             Producto ha sido eliminado correctamente
+          </div>
+          ";
+  }else{ // Algo paso mal
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony2.mp3' type='audio/mp3'>
+    </audio>
 
-              }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado
-                      </div>";
-              }
+    <div class='alert alert-danger'>
+             Ha ocurrido un error inexperado
+          </div>";
+  }
 
               $objDBO->close();
 

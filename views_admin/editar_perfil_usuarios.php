@@ -153,15 +153,25 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $ejecucion = $objDBO->Operaciones("UPDATE info_usuarios SET nombre='$nomb', telefono='$telf', direccion='$direc', usuario='$email', password='$pass', foto='$fotou' 
                                                  WHERE id=$codp ");
 
-              if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
-                         Usuario  ha sido Actualizado correctamente
-                      </div>";
-              }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado ".$this->error_message."
-                      </div>";
-              }
+if($ejecucion){ // Todo se ejecuto correctamente
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony1.mp3' type='audio/mp3'>
+    </audio>
+    <div class='alert alert-success'>
+             Usuario actualizado correctamente
+          </div>
+          ";
+  }else{ // Algo paso mal
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony2.mp3' type='audio/mp3'>
+    </audio>
+
+    <div class='alert alert-danger'>
+             Ha ocurrido un error inexperado
+          </div>";
+  }
 
               $objDBO->close();
 

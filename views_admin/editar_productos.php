@@ -300,15 +300,25 @@ if(isset($_GET["cp"])){//URL PERFECTA
               foto='$fotop', foto2='$fotop2', foto3='$fotop3', foto4='$fotop4', foto5='$fotop5'
                                                  WHERE cod=$codp ");
 
-              if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
-                         Producto ha sido Actualizado correctamente
-                      </div>";
-              }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado ".$this->error_message."
-                      </div>";
-              }
+if($ejecucion){ // Todo se ejecuto correctamente
+  echo "
+  <audio controls='' autoplay='' id='ocultar'>
+  <source src='../Audios/sony1.mp3' type='audio/mp3'>
+  </audio>
+  <div class='alert alert-success'>
+           Producto ha sido actualizado correctamente
+        </div>
+        ";
+}else{ // Algo paso mal
+  echo "
+  <audio controls='' autoplay='' id='ocultar'>
+  <source src='../Audios/sony2.mp3' type='audio/mp3'>
+  </audio>
+
+  <div class='alert alert-danger'>
+           Ha ocurrido un error inexperado
+        </div>";
+}
 
               $objDBO->close();
 

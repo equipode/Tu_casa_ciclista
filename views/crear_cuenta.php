@@ -136,15 +136,26 @@
               $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, telefono, direccion, usuario, password, foto)
                                                                 values('$monbre', '$telf', '$dire', '$email', '$pas', '$fotop') ");
 
-              if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
-                         Has sido registrado con exito
-                      </div>";
-              }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado
-                      </div>";
-              }
+if($ejecucion){ // Todo se ejecuto correctamente
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony1.mp3' type='audio/mp3'>
+    </audio>
+    <div class='alert alert-success'>
+             su cuenta ha sido creada
+          </div>
+          ";
+  }else{ // Algo paso mal
+    echo "
+    <audio controls='' autoplay='' id='ocultar'>
+    <source src='../Audios/sony2.mp3' type='audio/mp3'>
+    </audio>
+
+    <div class='alert alert-danger'>
+             Ha ocurrido un error inexperado
+          </div>";
+  }
+
 
               $objDBO->close();
 
