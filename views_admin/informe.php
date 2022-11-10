@@ -177,9 +177,9 @@ $nombre = $_SESSION['nombre'];
                                             <td>
 
                                                 <a href="editar_productos.php?cp=<?php echo $rows['cod']; ?>"
-                                                    class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                                                   title="editar" class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
                                                 <a href="eliminar_productos.php?cp=<?php echo $rows['cod']; ?>"
-                                                    class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                                   title="eliminar" class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php 

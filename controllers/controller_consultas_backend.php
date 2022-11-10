@@ -45,6 +45,7 @@ class ExtraerDatos extends ConsultasDB
 		return $lista;
 	}
 
+	
 	//listado de productos
 	function listadoProductos($start=0, $regsCant = 0){
 		$sql = "SELECT * FROM info_productos";

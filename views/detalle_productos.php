@@ -131,9 +131,18 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <div class="btn btn-primary btn-lg btn-flat">
+                                    <!-- <div class="btn btn-primary btn-lg btn-flat">
                                         <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                                        Add to Cart
+                                        Comprar
+                                    </div> -->
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <!-- el cod es la clave primaria de la clave productos -->
+                                            <a href="venta.php?cp=<?php echo $idp ?>"
+                                                class="btn btn-sm btn-primary">
+                                                </i> Comprar
+                                            </a>
+                                        </div>
                                     </div>
 
                                     <div class="btn btn-default btn-lg btn-flat">

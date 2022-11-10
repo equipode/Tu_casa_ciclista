@@ -1,8 +1,0 @@
-function ensayo($idu){
-		$sql = "SELECT *
-		        FROM info_usuarios p 
-		        WHERE p.usuario='$idu'";
-		$lista = $this->consulta_generales($sql);	
-		return $lista;
-	}
-	

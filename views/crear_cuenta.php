@@ -89,9 +89,10 @@
          // estas variables se utilizan a la hora de insertar datos en la base de datos en la variable ejecucion
               $monbre = $_POST["txt_nome"];
               $email = $_POST["txt_emai"];
-              $pas = sha1 ($_POST["txt_pas"]);
               $dire = $_POST["txt_dir"];
+              $ciu = $_POST["txt_ciu"];
               $telf = $_POST["txt_telf"];
+              $pas = sha1 ($_POST["txt_pas"]);
 
 
 
@@ -133,8 +134,8 @@
               $objDBO->conexion();
 
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, telefono, direccion, usuario, password, foto)
-                                                                values('$monbre', '$telf', '$dire', '$email', '$pas', '$fotop') ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, ciudad, direccion, telefono, usuario, password, foto)
+                                                                values('$monbre', '$ciu', '$dire', '$telf', '$email', '$pas', '$fotop') ");
 
 if($ejecucion){ // Todo se ejecuto correctamente
     echo "
@@ -187,11 +188,28 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6 col-sm-12 col-12">
+                                        <div class="col-md-4 col-sm-12 col-12">
+                                            <div class="form-group">
+                                                <label for="txt_ciu">Ciudad</label>
+                                                <input type="text" class="form-control" id="txt_ciu" name="txt_ciu"
+                                                    placeholder=""></input>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-12">
                                             <div class="form-group">
                                                 <label for="txt_dir">Dirreción</label>
                                                 <input type="text" class="form-control" id="txt_dir" name="txt_dir"
                                                     placeholder=""></input>
+                                            </div>
+                                        </div>
+
+                                        <!-- Control VALOR -->
+                                        <div class="col-md-4 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="txt_telf">telefono</label>
+                                                <input type="text" class="form-control" id="txt_telf" name="txt_telf"
+                                                    placeholder="">
                                             </div>
                                         </div>
 
@@ -204,14 +222,6 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                             </div>
                                         </div>
 
-                                        <!-- Control VALOR -->
-                                        <div class="col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label for="txt_telf">telefono</label>
-                                                <input type="text" class="form-control" id="txt_telf" name="txt_telf"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
 
 
 
