@@ -47,13 +47,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Tu Casa Ciclista</h1>
+                            <h1 align="right"><b>Tu Casa Ciclista</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                                 <li class="breadcrumb-item"><a href="views/iniciar_sesion.php">Login</a></li>
-                        
+
                             </ol>
                         </div>
                     </div>
@@ -68,27 +68,149 @@
             <!-- Main content -->
             <section class="content">
 
-            
-         <h1>Hola, aficionados ciclistas</h1>
+                <div class="container">
+                    <h2><b>Hola, aficionados ciclistas</b></h2><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Somos el sitio web ideal donde puedes encontrar las mejores opciones de bicicletas de
+                                alta gama, buena calidad y a tu gusto.</h2><br>
+                        </div>
+                    </div>
+                </div><br><br>
+
+                <!-- TITULO -->
+                <div class="container">
+                    <div class="row">
+
+                        <div align="center" class="col-md-12">
+                            <h2><b>¡Mira lo que te ofrecemos!</b></h2>
+                        </div>
+
+                    </div>
+                </div><br>
+
+                <!-- IMAGENES CON TEXTO -->
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <img src="imgs/productos/imge1.jpg" alt="" width="350" height="300">
+
+                        </div>
+                        <div class="col-md-4">
+                            <img src="imgs/productos/img2.jpg" alt="" width="350" height="300">
+                        </div>
+
+                        <div class="col-md-4">
+                            <img src="imgs/productos/img3.png" alt="" width="350" height="300">
+                        </div>
+
+                    </div>
+                </div><br>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <h2><b>Bicicleta urbana</b></h2>
+                            <h3>Ideal para desplazarte por la ciudad con seguridad.</h3>
+
+                        </div>
+                        <div class="col-md-4">
+                            <h2><b>Bicicleta profesional</b></h2>
+                            <h3>Perfecta para entrenar.</h3>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h2><b>Bicicleta de montaña</b></h2>
+                            <h3>Perfecta para entrenar en zona montañosa y rural.</h3>
+                        </div>
+
+                    </div>
+                </div><br><br>
+                <!-- /.content -->
+
+                <div class="container">
+                    <h2 align="center"><b>¿Por qué es bueno a hacer ciclismo?</b></h2><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Los expertos dicen que practicar ciclismo te ayuda a mejorar el rendimiento del corredor
+                                al mejorar la forma física, la
+                                resistencia y el aguante sin dañar los músculos de las piernas. También es un gran
+                                ejercicio cardiovascular de bajo impacto y, al añadirlo a tu régimen de entrenamiento
+                                semanal, te ayudará a hacer más con menos estrés en tu cuerpo.</h2><br>
+                        </div>
+                    </div>
+                </div><br><br>
+
+                <div class="container">
+                    <div class="row">
+                        <div align="center" class="col-md-12">
+                            <iframe width="853" height="480" src="https://www.youtube.com/embed/-TaHV3Ziw_A"
+                                title="10 BENEFICIOS de andar en BICICLETA para tu SALUD" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="imgs/productos/fondo.png" alt="" width="1099" height="500">
+                        </div>
+                    </div>
+                </div><br><br>
 
 
 
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
 
-        <footer class="main-footer">
-            <?php 
+                <!-- TITULO -->
+                <div class="container">
+                    <div class="row">
+
+                        <div align="left" class="col-md-12">
+                            <h2><b>Mira el listado de nuestros productos</b></h2>
+                            <a class="btn btn-primary" href="views/productos.php" role="button">¡Ingresa aquí!</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TITULO -->
+                <div class="container">
+                    <div class="row">
+
+                        <div align="right" class="col-md-12">
+                            <h2><b>¿No tienes una cuenta?</b></h2>
+                            <a class="btn btn-primary" href="views/crear_cuenta.php" role="button">¡Crea una!</a>
+                            <a class="btn btn-primary" href="views/iniciar_sesion.php" role="button">O ingresa</a>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div><br>
+
+
+        </section>
+
+
+
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <?php 
       include "includesp/footer.php";
      ?>
-        </footer>
+    </footer>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

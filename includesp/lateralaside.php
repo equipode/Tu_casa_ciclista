@@ -1,6 +1,6 @@
 <!-- Brand Logo -->
 <a href="index.php" class="brand-link">
-  <img src="imgs/logo.png"
+  <img src="imgs/logo2.png"
        alt="AdminLTE Logo"
        class="brand-image img-circle elevation-3"
        style="opacity: .8">
