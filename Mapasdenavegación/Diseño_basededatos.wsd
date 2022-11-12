@@ -26,13 +26,11 @@ Class productos{
    hora: TIME 
 }
 
-Class compras{
-    cod_PK: INT
-    fecha: DATE
-    valor: DOUBLE
-    fecha_de_entrega: DATE
-    observacion: VARCHAR
-    metodo_de_pago: VARCHAR
+Class info_ventas{
+   cod_PK: INT
+   cliente: INT
+   fk_product: INT
+   
 }
 
 Class usuarios{
@@ -46,7 +44,7 @@ Class usuarios{
 }
 
 
-compras  *-- "Realizar" clientes
-compras  *-- "Adquirir" productos
+info_ventas *-- "Realizar" clientes
+info_ventas  *-- "Adquirir" productos
 
 @enduml
