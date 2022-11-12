@@ -134,7 +134,7 @@
               $objDBO->conexion();
 
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombre, ciudad, direccion, telefono, usuario, password, foto)
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_clientes(nombrec, ciudad, direccion, telefono, usuario, password, foto)
                                                                 values('$monbre', '$ciu', '$dire', '$telf', '$email', '$pas', '$fotop') ");
 
 if($ejecucion){ // Todo se ejecuto correctamente
@@ -250,6 +250,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                     <button type="submit" id="btn_regist" class="btn bg-primary">Registrarse
                                     </button>
                                     <button type="reset" class="btn btn-default">Limpiar</button>
+                                    <a href="productos.php">Volver a la compra</a>
                                 </div>
 
                             </form> <!-- /.fin Form -->

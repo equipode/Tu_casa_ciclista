@@ -9,8 +9,8 @@
 
                         $idp = $_GET["cp"];//variable url
 
-                        $productoDetalle = array();
-                        $productoDetalle = $objDB->comprasDetalle($idp);
+                        $comprasDetalle = array();
+                        $comprasDetalle = $objDB->comprasDetalle($idp);
                         
                         ?>
 <head>
@@ -109,11 +109,11 @@
                 <div class="col-sm-4 invoice-col">
                   To
                   <address>
-                    <strong><?php echo $productoDetalle[0]['cliente'] ?></strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (555) 539-1037<br>
-                    Email: john.doe@example.com
+                    <strong><?php echo $comprasDetalle[0]['nombrec'] ?></strong><br>
+                    <?php echo $comprasDetalle[0]['direccion'] ?><br>
+                    <?php echo $comprasDetalle[0]['ciudad'] ?><br>
+                    <?php echo $comprasDetalle[0]['telefono'] ?><br>
+                    <?php echo $comprasDetalle[0]['usuario'] ?><br>
                   </address>
                 </div>
                 <!-- /.col -->
@@ -144,10 +144,10 @@
                     <tbody>
                     <tr>
                       <td>1</td>
-                      <td><?php echo $productoDetalle[0]['nombre'] ?></td>
-                      <td><?php echo $productoDetalle[0]['referencia'] ?></td>
-                      <td><?php echo $productoDetalle[0]['descripcioncorta'] ?></td>
-                      <td><?php echo $productoDetalle[0]['valorcomercial'] ?></td>
+                      <td><?php echo $comprasDetalle[0]['nombre'] ?></td>
+                      <td><?php echo $comprasDetalle[0]['referencia'] ?></td>
+                      <td><?php echo $comprasDetalle[0]['descripcioncorta'] ?></td>
+                      <td><?php echo $comprasDetalle[0]['valorcomercial'] ?></td>
                     </tr>
                     
                     </tbody>

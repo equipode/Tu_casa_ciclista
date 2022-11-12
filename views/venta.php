@@ -8,11 +8,11 @@
 
                         $idp = $_GET["cp"];//variable url
 
-                        $motosCarrosDetalle = array();
-                        $motosCarrosDetalle = $objDB->productoDetalle($idp);
+                        $vproductoDetalle = array();
+                        $vproductoDetalle = $objDB->productoDetalle($idp);
                         
                         ?>
-  
+
 <!DOCTYPE html>
 <html>
 
@@ -78,9 +78,9 @@
             <section class="content" id="fondo">
 
                 <div class="row">
-                     <!-- este div es para centrar el formulario -->
+                    <!-- este div es para centrar el formulario -->
                     <div class="col-md-2">
-                            
+
                     </div>
 
                     <!-- COLUMNA DE FORMULARIO  -->
@@ -96,18 +96,19 @@
                             <!-- Para controles de formularios siempre usar etiqueta FORM -->
 
                             <?php 
-            if(isset($_POST["txt_nome"])){//verificar la existencia de envio de datos
+            if(isset($_POST["txt_pro"])){//verificar la existencia de envio de datos
          // estas variables se utilizan a la hora de insertar datos en la base de datos en la variable ejecucion
-              $monbre = $_POST["txt_nome"];
+              $monbre = $_POST["txt_pro"];
               $pro = $_POST["txt_codprod"];
               
+  
               $objDBO = new DBConfig();
               $objDBO->config();
               $objDBO->conexion();
 
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_venta(cod, cliente, fk_product)
-                                                                values(NULL ,'$monbre', $pro) ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_venta(cliente, fk_product)
+                                                                values($monbre, $pro) ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
@@ -125,35 +126,57 @@
             }
             ?>
 
+                            
 
-                            <form role="form" name="frm_prods" id="frm_prods" method="POST" 
-                            action="venta.php?cp=<?php echo $idp ?>"
-                                enctype="multipart/form-data">
+                            <?php 
+            $objDB = new ExtraerDatos();
+
+            $productos = array();
+            $productos = $objDB->listadoClientesc();
+
+            // if($productos){
+
+            //   echo "<div class='row'>";
+              
+            // //proceso para mostrar listas de datos
+            // foreach ($productos as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+
+
+                            <form role="form" name="frm_prods" id="frm_prods" method="POST"
+                                action="venta.php?cp=<?php echo $idp ?>" enctype="multipart/form-data">
                                 <div class="card-body">
 
                                     <div class="row">
 
-                                        
 
-                                        <div class="col-md-6 col-sm-12 col-12">
+
+                                    <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
-                                                <label for="txt_nome">Nombre</label>
-                                                <input type="text" class="form-control" id="txt_nome" name="txt_nome"
-                                                    placeholder="">
+                                                <label>Producto</label>
+                                                <select class="form-control" name="txt_pro" id="txt_pro">
+                                                    <option value="0">Selecionar productos</option>
+                                                    <?php foreach ($productos as $opciones): ?>
+                                                    <option value="<?php echo $opciones['id'] ?>">
+                                                        <?php echo $opciones['nombrec'] ?>
+                                                        <?php endforeach ?>
+                                                    </option>
+
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 col-sm-12 col-12">
-                                        <h2> <?php echo $motosCarrosDetalle[0]['nombre'] ?></h2>
+                                            <h2> <?php echo $vproductoDetalle[0]['nombre'] ?></h2>
                                         </div>
-                                        
+
                                         <input type="hidden" name="txt_codprod" id="txt_codprod"
-                                    value="<?php echo $idp ?>">
+                                            value="<?php echo $idp ?>">
 
-                                    
-                                        
 
-                                        
+
+
+
                                     </div> <!-- /.fin row -->
 
                                 </div> <!-- /.fin card-body -->
@@ -163,22 +186,23 @@
                                     </button>
                                     <button type="reset" class="btn btn-default">Limpiar</button>
                                     <a href="list_ventas.php">seguir</a>
+                                    <a href="crear_cuenta.php">Crear Cuenta</a>
                                 </div>
 
 
                                 <div class="card-footer">
-                                        
+
 
                             </form> <!-- /.fin Form -->
 
-                           
+
 
                         </div>
 
-                        
+
 
                     </div>
-                   <!-- este div es para centrar el formulario -->
+                    <!-- este div es para centrar el formulario -->
                     <div class="col-md-2">
 
                     </div>

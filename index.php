@@ -94,15 +94,15 @@
                     <div class="row">
 
                         <div class="col-md-4">
-                            <img src="imgs/productos/imge1.jpg" alt="" width="350" height="300">
+                            <img src="imgs/Principal/imge1.jpg" alt="" width="350" height="300">
 
                         </div>
                         <div class="col-md-4">
-                            <img src="imgs/productos/img2.jpg" alt="" width="350" height="300">
+                            <img src="imgs/Principal/img2.jpg" alt="" width="350" height="300">
                         </div>
 
                         <div class="col-md-4">
-                            <img src="imgs/productos/img3.png" alt="" width="350" height="300">
+                            <img src="imgs/Principal/img3.png" alt="" width="350" height="300">
                         </div>
 
                     </div>
@@ -157,7 +157,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <img src="imgs/productos/fondo.png" alt="" width="1099" height="500">
+                            <img src="imgs/Principal/fondo.png" alt="" width="1099" height="500">
                         </div>
                     </div>
                 </div><br><br>

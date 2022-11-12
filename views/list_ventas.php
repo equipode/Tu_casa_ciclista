@@ -102,7 +102,7 @@
                                           
                     ?>
                                         <tr>
-                                            <td><?php echo $rows["cliente"]; ?></td>
+                                            <td><?php echo $rows["nombrec"]; ?></td>
                                             <td><?php echo $rows["nombre"]; ?></td>
                                             <td>
 

@@ -50,9 +50,9 @@ $nombre = $_SESSION['nombre'];
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="fondo">
             <!-- Content Header (Page header) -->
-            <section class="content-header" id="fondo">
+            <section class="content-header" >
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">

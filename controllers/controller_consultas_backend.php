@@ -31,6 +31,14 @@ class ExtraerDatos extends ConsultasDB
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
+
+	function listadoClientesc($start=0, $regsCant = 0){
+		$sql = "SELECT * FROM info_clientes";
+		if ($regsCant > 0 )
+			 $sql = "SELECT * from info_clientes $start,$regsCant";
+		$lista = $this->consulta_generales($sql);	
+		return $lista;
+	}
 	// DETALLE DE CLIENTES SELECCIONADA SEGUN ID
 	function clientesDetalle($idu){
 		$sql = "SELECT * from info_clientes where id=$idu ";

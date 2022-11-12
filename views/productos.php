@@ -49,7 +49,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 align="right">Productos</h1>
+                            <h1>Productos</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -62,14 +62,38 @@
 
             <!-- Main content -->
 
+            <?php
+  $objDB = new ExtraerDatos();
 
+  $productos = array();
+
+  if(isset($_POST["txtBuscar"])){ //se filtro algo
+    $productos = $objDB->productoPorIdCoinc($_POST["txtBuscar"]); //filtramos coincidencia
+  }else{
+    $productos = $objDB->listadoProductos(); //traemos todo
+  }
+
+
+?>
             <section class="content">
 
-                <?php 
-            $objDB = new ExtraerDatos();
+                <div class="col-md-8 offset-md-2">
+                    <form name="frm_filtro" id="frm_filtro" method="post" action="productos.php">
+                        <div class="input-group">
+                            <input type="search" id="txtBuscar" name="txtBuscar" class="form-control form-control-lg"
+                                placeholder="Buscar">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-lg btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br><br>
 
-            $productos = array();
-            $productos = $objDB->listadoProductos();
+
+                <?php
 
             if($productos){
 
@@ -95,7 +119,8 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="text-right"><!-- el cod es la clave primaria de la clave productos -->
+                            <div class="text-right">
+                                <!-- el cod es la clave primaria de la clave productos -->
                                 <a href="detalle_productos.php?cp=<?php echo $rows['cod'];?>"
                                     class="btn btn-sm btn-primary">
                                     </i> Detalle
