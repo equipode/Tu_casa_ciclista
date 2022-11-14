@@ -30,6 +30,7 @@ Class info_ventas{
    cod_PK: INT
    cliente: INT
    fk_product: INT
+   fechac: DATE
    
 }
 
