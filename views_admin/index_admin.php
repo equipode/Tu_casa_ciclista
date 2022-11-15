@@ -1,5 +1,8 @@
 <?php 
 
+include "../controllers/controller_consultas_admin.php";
+
+
  session_start();
 
  $nombre = $_SESSION['nombre'];
@@ -22,8 +25,8 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    
-    
+
+
 
     <!--Estilos de las paginas web -->
     <link href="../CSS/style.css" rel="stylesheet">
@@ -36,7 +39,7 @@
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>"  id="header">
+        <nav class="main-header navbar navbar-expand <?php echo $headerStyle; ?>" id="header">
             <?php 
       include "includes/header.php";
     ?>
@@ -61,8 +64,8 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
-                            <li class="breadcrumb-item"><a href="../index.php">publica</a></li>
+                                <li class="breadcrumb-item"><a href="index_admin.php">Home</a></li>
+                                <li class="breadcrumb-item"><a href="../index.php">publica</a></li>
                             </ol>
                         </div>
                     </div>
@@ -71,9 +74,141 @@
 
             <!-- Main content -->
             <section class="content">
-                
-              <H1>Hola <?php echo $nombre; ?></H1>
 
+                <h6>Hola <?php echo $nombre; ?></h6>
+
+<div class="row">
+
+
+                <?php 
+            $objDB = new ExtraerDatos();
+
+            $listadoVentas = array();
+            $listadoVentas = $objDB->listadoVentas();
+
+
+            if($listadoVentas){
+
+            //   echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+            foreach ($listadoVentas as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+
+                <div class="col-3 col-sm-3 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Ventas</span>
+                            <span class="info-box-number">
+                                <?php echo $rows["total_v"]; ?>
+
+                            </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <?php   }  } ?>
+
+
+
+
+                <?php 
+            $objDB = new ExtraerDatos();
+
+            $listadoProductos = array();
+            $listadoProductos = $objDB->listadoProductos();
+
+
+            if($listadoProductos){
+
+            //   echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+            foreach ($listadoProductos as $rowsp){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+
+                <div class="col-3 col-sm-3 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Productos</span>
+                            <span class="info-box-number"><?php echo $rowsp["total_p"]; ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <?php   }  } ?>
+               
+               
+               
+               
+               
+               <?php 
+            $objDB = new ExtraerDatos();
+
+            $listadoClientes = array();
+            $listadoClientes = $objDB->listadoClientes();
+
+
+            if($listadoClientes){
+
+            //   echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+            foreach ($listadoClientes as $rowsc){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+
+                <div class="col-3 col-sm-3 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Clientes</span>
+                            <span class="info-box-number"><?php echo $rowsc["total_c"]; ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <?php   }  } ?>
+
+
+
+                <?php 
+            $objDB = new ExtraerDatos();
+
+            $listadoUsuarios = array();
+            $listadoUsuarios = $objDB->listadoUsuarios();
+
+
+            if($listadoUsuarios){
+
+            //   echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+            foreach ($listadoUsuarios as $rowsu){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+        ?>
+
+                <div class="col-3 col-sm-3 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Usuarios</span>
+                            <span class="info-box-number"><?php echo $rowsu["total_u"]; ?></span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <?php   }  } ?>
+
+                </div>
 
             </section>
             <!-- /.content -->
