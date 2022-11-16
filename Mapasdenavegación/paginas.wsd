@@ -5,26 +5,23 @@
 
 (Productos) as (prod)
 (Detalle_productos) as (det)
+ (Venta) as (vent) 
+(list_ventas) as (list_vent) 
 
-(Comprar) as (car)
-(Carrito_de_compras) as (carr_c)
+(Compras) as (car)
 
 (index_amind) as (log1)
-(Iniciar_sesion) as (log2)
-
 
 (index) --|> (log)
-(index) --|> (Use)
 (index) --|> (prod)
 
 (log) --|> (log1)
-(log) --|> (log2)
 
 (prod) --|> (det)
-(det) --|> (log2)
-
-(log2) --|> (car)
-(car) --|> (carr_c)
+(det) --|> (vent)
+(vent) --|> (Use)
+(vent) --|> (list_vent)
+(list_vent) --|> (car)  
 
 (Productos_admin) as (prod_admin)
 (Registrar) as (regisp)
