@@ -8,9 +8,9 @@ class ConsultasDB extends DBConfig {
 		$this->config();
 		$this->conexion(); 
 		  
-  		$records = $this->Consultas($sql);		 		  		  		  
+  		$records = $this->Consultas($sql);
 
-  		$this->close();		
+		$this->close();		
 		return $records;				
 	}
 }

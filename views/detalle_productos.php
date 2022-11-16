@@ -15,7 +15,7 @@
 
 <head>
     <title><?php echo $productoDetalle[0]['nombre'] ?></title>
-    <link rel="icon" href="../imgs/logo.png">
+    <link rel="icon" href="../<?php echo $productoDetalle[0]['foto1'] ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
@@ -69,12 +69,12 @@
                             <div class="col-12 col-sm-6">
                                 <h3 class="d-inline-block d-sm-none">Gravel</h3>
                                 <div class="col-12">
-                                    <img src="../<?php echo $productoDetalle[0]['foto'] ?>" class="product-image"
+                                    <img src="../<?php echo $productoDetalle[0]['foto1'] ?>" class="product-image"
                                         alt="Product Image">
                                 </div>
                                 <div class="col-12 product-image-thumbs">
                                     <div class="product-image-thumb active"><img
-                                            src="../<?php echo $productoDetalle[0]['foto'] ?>" alt="Product Image">
+                                            src="../<?php echo $productoDetalle[0]['foto1'] ?>" alt="Product Image">
                                     </div>
                                     <div class="product-image-thumb active"><img
                                             src="../<?php echo $productoDetalle[0]['foto2'] ?>" alt="Product Image">
@@ -124,6 +124,19 @@
                                 <div class="bg-gray py-2 px-3 mt-4">
                                     <h2 class="mb-0">
                                         <?php echo $productoDetalle[0]['valorcomercial'] ?>
+                                        <!-- <?php 
+                                        
+                                        // $hola = 200.000;
+                                    //   $precio =  $productoDetalle[0]['valorcomercial'];
+        
+
+                                        // $resultado = $precio * 2;
+
+                                        // echo $resultado;
+                                        
+                                        
+                                        ?> -->
+
                                     </h2>
                                     <h4 class="mt-0">
                                         <small>Ex Tax: $80.00 </small>

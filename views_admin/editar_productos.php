@@ -297,7 +297,7 @@ if(isset($_GET["cp"])){//URL PERFECTA
               $objDBO->conexion();
 
               $ejecucion = $objDBO->Operaciones("UPDATE info_productos SET referencia='$refer', nombre='$nombr', descripcion='$descr', descripcioncorta='$descor', cantidad=$canti, valorcomercial=$vlrcm, 
-              foto='$fotop', foto2='$fotop2', foto3='$fotop3', foto4='$fotop4', foto5='$fotop5'
+              foto1='$fotop', foto2='$fotop2', foto3='$fotop3', foto4='$fotop4', foto5='$fotop5'
                                                  WHERE cod=$codp ");
 
 if($ejecucion){ // Todo se ejecuto correctamente

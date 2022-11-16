@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Titulo Página</h1>
+                            <h1>Registro de compra</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -64,80 +64,70 @@
             </section>
             
             <!-- Main content -->
-            <?php
-  $objDB = new ExtraerDatos();
+   
 
-  $prods = array();
-  $prods = $objDB->listadoVentas();
-
-?>
             <section class="content">
-            <div class="row">
-                    <!-- COLUMNA DE TABLA DE DATOS  -->
-                    <div class="col-md-12">
-                        <!--  -->
+            <?php 
+        //La variable $objDB apunta a la clase ExtraerDatos Que esta en los Controllers
+            $objDB = new ExtraerDatos();
 
-                        <div class="card">
-                            <div class="card-header bg-indigo">
-                                <h3 class="card-title">Datos en Tabla</h3>
+            $listadousuarios = array();
+            $listadousuarios = $objDB->listadoVentas();
+
+            if($listadousuarios){
+
+              echo "<div class='row'>";
+              
+            //proceso para mostrar listas de datos
+             //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
+            foreach ($listadousuarios as $rows){ 
+        ?>
+                <div class="col-12 col-sm-12 col-md-12">
+                    <div class="card bg-light">
+                       
+                        <div class="card-body pt-0">
+                            <div class="row">
+
+                                <div class="col-7">
+                                <b>Cliente: </b><?php echo $rows["nombrec"]; ?>
+                                    <br>
+                                    <b>Producto:</b> <?php echo $rows["nombre"]; ?><br>
+                                    <b> Descripción:</b> <?php echo $rows["descripcion"]; ?><br>
+                                    
+                                </div>
+
+                                <div class="col-5 text-center">
+                                    <img src="../<?php echo $rows['foto1']; ?>" alt="" class="img-circle img-fluid">
+                                </div>
                             </div>
-                            <!-- /.card-header -->
-                            <div class="card-body p-0">
-                                <?php if($prods){ ?>
-
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                
-                                            <th>Cliente</th>
-                                            <th>Nombre</th>
-                                            <th style="width: 40px">Accion</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <?php 
-                    //RECORRIDO DE ELEMENTOS DE FORMA REPETITIVA
-                    foreach ($prods as $rows) {
-                                          
-                    ?>
-                                        <tr>
-                                            <td><?php echo $rows["nombrec"]; ?></td>
-                                            <td><?php echo $rows["nombre"]; ?></td>
-                                            <td>
-
-                                                <a href="compras.php?cp=<?php echo $rows['cod']; ?>"
-                                                  title="editar"  class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
-                                            </td>
-                                        </tr>
-                                        <?php 
-                    }//FIN CICLO REPETITIVO DE DATOS
-                    ?>
-                                    </tbody>
-
-                                </table>
-                                <?php 
-              }else{
-                echo "<div class='alert alert-secondary'>
-                      No hay datos de productos. Registre uno<br>
-                      <a href='registrar_productos.php' class='btn btn-info' >Registro</a> 
-                      </div>
-                      ";
-              }
-                 ?>
-
-                            </div>
-                            <!-- /.card-body -->
                         </div>
-
-                    </div><!-- Fin contenido TABLA DE DATO -->
+                  <!-- Los dos enlaces siguientes son para editar y eliminar -->
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <a href="compras.php?cp=<?php echo $rows['cod']; ?>"
+                                    class="bnt btn-xs btn-info">Continuar </a>
+                                 
+                            </div>
+                        </div>
+                    <!-- fin de los enlaces de editar y eliminar-->
+                    </div>
                 </div>
 
+                <?php
+            }//Fin del foreach
 
+            echo "</div>"; //fin del row
+
+            }else{
+              echo "No hay datos o no se pudo conectar a la fuente";
+            }            
+            //fin de la validación
+            ?>
 
 
 
             </section>
+            
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->

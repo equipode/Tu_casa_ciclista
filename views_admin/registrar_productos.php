@@ -274,7 +274,7 @@ $nombre = $_SESSION['nombre'];
               $objDBO->config();
               $objDBO->conexion();
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto, foto2, foto3, foto4, foto5, fecha, hora) 
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto1, foto2, foto3, foto4, foto5, fecha, hora) 
                                                                 values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', '$fotop2', '$fotop3', '$fotop4', '$fotop5', NOW(), NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente

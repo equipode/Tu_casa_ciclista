@@ -91,7 +91,7 @@
                         <!-- /.card-header -->
                         <div class="card">
                             <div class="card-header bg-primary" class="Sub">
-                                <h3 class="card-title">Formulario de registro </h3>
+                                <h3 class="card-title">Verificación de usuario</h3>
                             </div>
                             <!-- Para controles de formularios siempre usar etiqueta FORM -->
 
@@ -107,16 +107,16 @@
               $objDBO->conexion();
 
 
-              $ejecucion = $objDBO->Operaciones("INSERT INTO info_venta(cliente, fk_product)
-                                                                values($monbre, $pro) ");
+              $ejecucion = $objDBO->Operaciones("INSERT INTO info_venta(cliente, fk_product, fechac)
+                                                                values($monbre, $pro, NOW()) ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "<div class='alert alert-success'>
-                         Has sido registrado con exito
+                         Se ha verificado al usuario, selecciona continuar
                       </div>";
               }else{ // Algo paso mal
                 echo "<div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado
+                         Debe selecionar su usuario
                       </div>";
               }
 
@@ -126,7 +126,7 @@
             }
             ?>
 
-                            
+
 
                             <?php 
             $objDB = new ExtraerDatos();
@@ -151,11 +151,11 @@
 
 
 
-                                    <div class="col-md-6 col-sm-12 col-12">
+                                        <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
-                                                <label>Producto</label>
+                                                <label>Usuario</label>
                                                 <select class="form-control" name="txt_pro" id="txt_pro">
-                                                    <option value="0">Selecionar productos</option>
+                                                    <option value="0">Selecionar Usuario</option>
                                                     <?php foreach ($productos as $opciones): ?>
                                                     <option value="<?php echo $opciones['id'] ?>">
                                                         <?php echo $opciones['nombrec'] ?>
@@ -167,7 +167,11 @@
                                         </div>
 
                                         <div class="col-md-6 col-sm-12 col-12">
-                                            <h2> <?php echo $vproductoDetalle[0]['nombre'] ?></h2>
+                                            <br>
+                                            
+                                            <button type="submit" id="btn_regist"  class="btn bg-primary">Verificar
+                                            </button> <i class="fas fa-user-check"></i>
+                                            
                                         </div>
 
                                         <input type="hidden" name="txt_codprod" id="txt_codprod"
@@ -182,11 +186,10 @@
                                 </div> <!-- /.fin card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" id="btn_regist" class="btn bg-primary">Registrarse
-                                    </button>
-                                    <button type="reset" class="btn btn-default">Limpiar</button>
-                                    <a href="list_ventas.php">seguir</a>
-                                    <a href="crear_cuenta.php">Crear Cuenta</a>
+                                    <a href="crear_cuenta.php" class="btn bg-primary">Crear Cuenta</a>
+                                    <a href="list_ventas.php" class="btn bg-primary">Continuar</a>
+
+
                                 </div>
 
 

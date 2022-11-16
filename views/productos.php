@@ -113,7 +113,7 @@
                                     <h4>Precio: <?php echo $rows["valorcomercial"]; ?></h4>
                                 </div>
                                 <div class="col-5 text-center">
-                                    <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
+                                    <img src="../<?php echo $rows['foto1']; ?>" alt="" width="160px" height="160px"
                                         class="img-circle img-fluid">
                                 </div>
                             </div>

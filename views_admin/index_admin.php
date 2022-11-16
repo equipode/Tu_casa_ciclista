@@ -1,11 +1,11 @@
 <?php 
+session_start();
+
+$nombre = $_SESSION['nombre'];
 
 include "../controllers/controller_consultas_admin.php";
 
-
- session_start();
-
- $nombre = $_SESSION['nombre'];
+  
 
 ?>
 

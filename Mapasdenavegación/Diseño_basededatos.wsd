@@ -17,7 +17,7 @@ Class productos{
    descripcion: VARCHAR
    cantidad: INT
    valorcomercial: DOUBLE
-   foto: VARCHAR
+   foto1: VARCHAR
    foto2: VARCHAR
    foto3: VARCHAR
    foto4: VARCHAR
