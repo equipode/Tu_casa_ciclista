@@ -56,7 +56,7 @@ $nombre = $_SESSION['nombre'];
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Productos</h1>
+                            <h1 align="right"><b>Productos</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -105,7 +105,7 @@ $nombre = $_SESSION['nombre'];
                                             <th>FOTO3</th>
                                             <th>FOTO4</th>
                                             <th>FOTO5</th>
-                                            <th style="width: 40px">Accion</th>
+                                            <th style="width: 40px">ACCIÓN</th>
                                         </tr>
                                     </thead>
 
@@ -128,9 +128,11 @@ $nombre = $_SESSION['nombre'];
                                             <td>
 
                                                 <a href="editar_productos.php?cp=<?php echo $rows['cod']; ?>"
-                                                  title="editar"  class="bnt btn-xs btn-info"><i class="fa fa-edit"></i></a>
+                                                    title="editar" class="bnt btn-xs btn-info"><i
+                                                        class="fa fa-edit"></i></a>
                                                 <a href="eliminar_productos.php?cp=<?php echo $rows['cod']; ?>"
-                                                   title="eliminar" class="bnt btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                                    title="eliminar" class="bnt btn-xs btn-danger"><i
+                                                        class="fa fa-trash"></i></a>
 
                                             </td>
                                         </tr>

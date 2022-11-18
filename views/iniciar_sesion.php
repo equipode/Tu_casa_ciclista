@@ -53,7 +53,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Login</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -74,12 +74,12 @@
 <body class="hold-transition login-page" id="fondo">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../index.php"><b>Tienda</b>ciclista</a>
+            <a href="../index.php"></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Iniciar sesión</p>
+                <p class="login-box-msg"><h4 align="center"><b>Tienda</b>ciclista</h4></p>
 
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <div class="input-group mb-3">
@@ -114,17 +114,6 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-                <div class="social-auth-links text-center mb-3">
-                    <p>- O -</p>
-                    <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i> Ingresa usando Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Ingresa usando Google+
-                    </a>
-                </div>
-                <!-- /.social-auth-links -->
 
                 <p class="mb-1">
                     <a href="#">Olvidé mi contraseña</a>

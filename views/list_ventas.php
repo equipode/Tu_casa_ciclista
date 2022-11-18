@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Registro de compra</h1>
+                            <h1 align="right"><b>Registro de compra</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

@@ -15,7 +15,7 @@
                         ?>
 
 <head>
-    <title></title>
+    <title>Compras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/fontawesome-free/css/all.min.css">
@@ -60,7 +60,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Carrito de compra</h1>
+                            <h1 align="right"><b>Carrito de compra</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -88,8 +88,8 @@
                                     <div class="col-12">
 
                                         <h4>
-                                            <i class="fas fa-globe"></i> Tu casa ciclista L.T.D.A
-                                            <small class="float-right">Fecha:
+                                            <i class="fas fa-bicycle"></i><b> Tu casa ciclista L.T.D.A</b>
+                                            <small class="float-right"><b>Fecha: </b>
                                                 <?php echo $comprasDetalle[0]['fechac'] ?></small>
                                         </h4>
                                     </div>
@@ -120,7 +120,7 @@
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-sm-4 invoice-col">
-                                     
+
                                         <br>
                                         <b>ID de Orden:</b> 4F3S8J<br>
                                         <b>Fecha de pago: </b><?php echo $comprasDetalle[0]['fechac'] ?><br>
@@ -136,7 +136,7 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    
+
                                                     <th>Producto</th>
                                                     <th>Serial #</th>
                                                     <th>Descripción</th>
@@ -145,7 +145,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    
+
                                                     <td><?php echo $comprasDetalle[0]['nombre'] ?></td>
                                                     <td><?php echo $comprasDetalle[0]['referencia'] ?></td>
                                                     <td><?php echo $comprasDetalle[0]['descripcioncorta'] ?></td>
@@ -162,19 +162,19 @@
                                 <div class="row">
                                     <!-- accepted payments column -->
                                     <div class="col-6">
-                                        <p class="lead">Metodos de pago:</p>
+                                        <p class="lead"><b>Métodos de pago:</b></p>
                                         <img src="../imgs/credit/visa.png" alt="Visa">
                                         <img src="../imgs/credit/mastercard.png" alt="Mastercard">
                                         <img src="../imgs/credit/american-express.png" alt="American Express">
                                         <img src="../imgs/credit/paypal2.png" alt="Paypal">
 
                                         <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                                            
+
                                         </p>
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-6">
-                                        <p class="lead">Fecha: <?php echo $comprasDetalle[0]['fechac'] ?></p>
+                                        <p class="lead"><b>Fecha: </b><?php echo $comprasDetalle[0]['fechac'] ?></p>
 
                                         <div class="table-responsive">
                                             <table class="table">
@@ -212,11 +212,12 @@
                                 <!-- this row will not appear when printing -->
                                 <div class="row no-print">
                                     <div class="col-12">
-                                        <a href="compras.php?cp=<?php echo $comprasDetalle[0]['cod']; ?>" target="_blank" class="btn btn-default"><i
-                                                class="fas fa-print" id="lo"></i> Imprimir</a>
+                                        <a href="compras.php?cp=<?php echo $comprasDetalle[0]['cod']; ?>"
+                                            target="_blank" class="btn btn-default"><i class="fas fa-print" id="lo"></i>
+                                            Imprimir</a>
                                         <button type="button" class="btn btn-success float-right"><i
                                                 class="far fa-credit-card"></i> Pagar
-                                            
+
                                         </button>
                                         <button type="button" class="btn btn-primary float-right"
                                             style="margin-right: 5px;">
@@ -252,9 +253,9 @@
     </div>
     <!-- ./wrapper -->
 
-    <script type="text/javascript"> 
-  window.addEventListener("lo", window.print());
-</script>
+    <script type="text/javascript">
+    window.addEventListener("lo", window.print());
+    </script>
     <!-- jQuery -->
     <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->

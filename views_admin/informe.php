@@ -55,7 +55,7 @@ $nombre = $_SESSION['nombre'];
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Productos Informes</h1>
+                        <h1 align="right"><b>Productos Informe</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -154,7 +154,7 @@ $nombre = $_SESSION['nombre'];
                                             <th>FOTO3</th>
                                             <th>FOTO4</th>
                                             <th>FOTO5</th>
-                                            <th style="width: 40px">Accion</th>
+                                            <th style="width: 40px">ACCIÓN</th>
                                         </tr>
                                     </thead>
 

@@ -49,7 +49,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Productos</h1>
+                            <h1 align="right"><b>Productos</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -105,12 +105,12 @@
                 <div class="col-12 col-sm-6 col-md-6">
                     <div class="card bg-light">
                         <div class="card-header text-muted border-bottom-0">
-                            <h3><?php echo $rows["nombre"]; ?></h3>
+                            <h3><b><?php echo $rows["nombre"]; ?></b></h3>
                         </div>
                         <div class="card-body pt-0">
                             <div class="row">
                                 <div class="col-7">
-                                    <h4>Precio: <?php echo $rows["valorcomercial"]; ?></h4>
+                                    <h4><b>Precio:</b> <?php echo $rows["valorcomercial"]; ?></h4>
                                 </div>
                                 <div class="col-5 text-center">
                                     <img src="../<?php echo $rows['foto1']; ?>" alt="" width="160px" height="160px"
@@ -123,7 +123,7 @@
                                 <!-- el cod es la clave primaria de la clave productos -->
                                 <a href="detalle_productos.php?cp=<?php echo $rows['cod'];?>"
                                     class="btn btn-sm btn-primary">
-                                    </i> Detalle
+                                    </i><h4> Detalle</h4>
                                 </a>
                             </div>
                         </div>

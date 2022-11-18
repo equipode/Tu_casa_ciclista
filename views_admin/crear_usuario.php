@@ -58,7 +58,7 @@ $nombre = $_SESSION['nombre'];
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 align="right">Crear nuevo Usuario</h1>
+                            <h1 align="right"><b>Crear nuevo usuario</b></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -186,7 +186,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                         <!-- Control Inputbox ejemplo -->
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="txt_emai">correo</label>
+                                                <label for="txt_emai">Correo</label>
                                                 <input type="text" class="form-control" id="txt_emai"
                                                     name="txt_emai" placeholder="">
                                             </div>
@@ -194,7 +194,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
 
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="txt_dir">Dirreción</label>
+                                                <label for="txt_dir">Dirección</label>
                                                 <input type="text" class="form-control"  
                                                 id="txt_dir" name="txt_dir"  placeholder=""></input>
                                             </div>
@@ -203,7 +203,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                         <!-- Control cantidad  -->
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="txt_pas">contraseña</label>
+                                                <label for="txt_pas">Contraseña</label>
                                                 <input type="password" class="form-control" id="txt_pas"
                                                     name="txt_pas" placeholder="">
                                             </div>
@@ -212,7 +212,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                         <!-- Control VALOR -->
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="txt_telf">telefono</label>
+                                                <label for="txt_telf">Teléfono</label>
                                                 <input type="text" class="form-control" id="txt_telf"
                                                     name="txt_telf" placeholder="">
                                             </div>
