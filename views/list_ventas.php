@@ -105,7 +105,7 @@
                         <div class="card-footer">
                             <div class="text-right">
                                 <a href="compras.php?cp=<?php echo $rows['cod']; ?>"
-                                    class="bnt btn-xs btn-info">Continuar </a>
+                                    class="bnt btn-xs btn-info">Continuar.</a>
                                  
                             </div>
                         </div>
