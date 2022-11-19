@@ -14,15 +14,11 @@ class ConsultasDB extends DBConfig {
 		return $records;				
 	}
 }
-
-
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
 */
 class ExtraerDatos extends ConsultasDB
 {
-
-	
 	//MUESTRA LISTADO DE CLIENTES
 	function listadoclientes($start=0, $regsCant = 0){
 		$sql = "SELECT * FROM info_clientes";
@@ -107,13 +103,6 @@ class ExtraerDatos extends ConsultasDB
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
-
-	// ****************************************************************************
-	// Agregue aqui debajo el resto de Funciones - Se ha dejado  Listado y detalle
-	// ****************************************************************************
-
-	
-
 	
 }//fin CLASE
 

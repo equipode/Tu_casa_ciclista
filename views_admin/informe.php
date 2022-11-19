@@ -106,7 +106,7 @@ $nombre = $_SESSION['nombre'];
                         <!-- fin columna de contenido -->
                         <form name="frm_filtro" id="frm_filtro" method="post" action="informe.php">
                             <div class="card">
-                                <div class="card-header bg-indigo">
+                                <div class="card-header bg-primary">
                                     <h3 class="card-title">Filtrar Datos </h3>
                                 </div>
                                 <!-- /.card-header -->
@@ -134,7 +134,7 @@ $nombre = $_SESSION['nombre'];
                         <!--  -->
 
                         <div class="card">
-                            <div class="card-header bg-indigo">
+                            <div class="card-header bg-primary">
                                 <h3 class="card-title">Datos en Tabla</h3>
                             </div>
                             <!-- /.card-header -->
@@ -169,7 +169,7 @@ $nombre = $_SESSION['nombre'];
                                             <td><?php echo $rows["nombre"]; ?></td>
                                             <td><?php echo $rows["cantidad"]; ?></td>
                                             <td><?php echo $rows["valorcomercial"]; ?></td>
-                                            <td><img src="../<?php echo $rows['foto']; ?>" width="50"></td>
+                                            <td><img src="../<?php echo $rows['foto1']; ?>" width="50"></td>
                                             <td><img src="../<?php echo $rows['foto2']; ?>" width="50"></td>
                                             <td><img src="../<?php echo $rows['foto3']; ?>" width="50"></td>
                                             <td><img src="../<?php echo $rows['foto4']; ?>" width="50"></td>

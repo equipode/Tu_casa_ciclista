@@ -75,8 +75,6 @@
                     <!-- COLUMNA DE FORMULARIO  -->
                     <div class="col-md-8">
                         <!-- columna de contenido -->
-
-
                         <!-- /.card-header -->
                         <div class="card">
                             <div class="card-header bg-primary" class="Sub">
@@ -157,9 +155,7 @@ if($ejecucion){ // Todo se ejecuto correctamente
           </div>";
   }
 
-
-              $objDBO->close();
-
+      $objDBO->close();
 
             }
             ?>
@@ -222,10 +218,6 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                             </div>
                                         </div>
 
-
-
-
-
                                         <!-- Control FileUpload ejemplo -->
                                         <div class="col-md-6 col-sm-12 col-12">
                                             <div class="form-group">
@@ -240,7 +232,6 @@ if($ejecucion){ // Todo se ejecuto correctamente
                                                 </div>
                                             </div>
                                         </div>
-
 
                                     </div> <!-- /.fin row -->
 
@@ -262,14 +253,10 @@ if($ejecucion){ // Todo se ejecuto correctamente
                     <div class="col-md-2">
 
                     </div>
-
-
                     <!--  <div class="col-md-6">
                         <img src="../imgs/crear_productos/presentación.jpg">
 
                     </div>   -->
-
-
             </section>
             <!-- /.content -->
         </div>
@@ -288,17 +275,12 @@ if($ejecucion){ // Todo se ejecuto correctamente
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
-
-
-
     <!-- jQuery -->
     <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="../templates/AdminLTE-3.0.5/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../templates/AdminLTE-3.0.5/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="../templates/AdminLTE-3.0.5/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js">
     </script>
@@ -308,7 +290,6 @@ if($ejecucion){ // Todo se ejecuto correctamente
     <script src="../templates/AdminLTE-3.0.5/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../templates/AdminLTE-3.0.5/dist/js/demo.js"></script>
-
 </body>
 
 </html>

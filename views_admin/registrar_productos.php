@@ -293,7 +293,7 @@ $nombre = $_SESSION['nombre'];
                 </audio>
        
                 <div class='alert alert-danger'>
-                         Ha ocurrido un error inexperado
+                         Debe llenar todos los campos
                       </div>";
               }
 
@@ -470,63 +470,7 @@ $nombre = $_SESSION['nombre'];
 
                     </div>
 
-                    <?php 
-            $objDB = new ExtraerDatos();
-
-            $productos = array();
-            $productos = $objDB->listadoProductos();
-
-            if($productos){
-
-              echo "<div class='row'>";
-              
-            //proceso para mostrar listas de datos
-            foreach ($productos as $rows){  //la variable rows puede ser cualquier nombre y lo que hace es ir registro por registro de la tabla
-        ?>
-                    <div class="col-12 col-sm-6 col-md-6">
-                        <div class="card bg-light">
-                            <div class="card-header text-muted border-bottom-0">
-                                <h3><?php echo $rows["nombre"]; ?></h3>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h4>Precio: <?php echo $rows["valorcomercial"]; ?></h4>
-                                    </div>
-                                    <div class="col-5 text-center">
-                                        <img src="../<?php echo $rows['foto']; ?>" alt="" width="160px" height="160px"
-                                            class="img-circle img-fluid">
-                                    </div>
-                                    <div class="col-5 text-center">
-                                        <img src="../<?php echo $rows['foto2']; ?>" alt="" width="160px" height="160px"
-                                            class="img-circle img-fluid">
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <div class="text-right">
-                                    <!-- el cod es la clave primaria de la clave productos -->
-                                    <a href="detalle_productos.php?cp=<?php echo $rows['cod'];?>"
-                                        class="btn btn-sm btn-primary">
-                                        </i> Detalle
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php
-            }//Fin del foreach
-
-            echo "</div>";
-
-            }else{
-              echo "No hay datos o no se pudo conectar a la fuente";
-            }
-            
-            
-            ?>
+                    
 
 
 

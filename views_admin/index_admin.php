@@ -97,7 +97,7 @@ include "../controllers/controller_consultas_admin.php";
 
                 <div class="col-3 col-sm-3 col-md-3">
                     <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cart-arrow-down"></i></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">Ventas</span>
@@ -165,7 +165,7 @@ include "../controllers/controller_consultas_admin.php";
 
                 <div class="col-3 col-sm-3 col-md-3">
                     <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+                        <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">Clientes</span>
@@ -196,7 +196,7 @@ include "../controllers/controller_consultas_admin.php";
 
                 <div class="col-3 col-sm-3 col-md-3">
                     <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
+                        <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
 
                         <div class="info-box-content">
                             <span class="info-box-text">Usuarios</span>
@@ -209,6 +209,75 @@ include "../controllers/controller_consultas_admin.php";
                 <?php   }  } ?>
 
                 </div>
+
+
+
+                <?php
+  $objDB = new ExtraerDatos();
+
+  $prods = array();
+  $prods = $objDB->listadodVentas();
+
+?>
+
+                <div class="row">
+                    <!-- COLUMNA DE TABLA DE DATOS  -->
+                    <div class="col-md-12">
+                        <!--  -->
+
+                        <div class="card">
+                            <div class="card-header bg-success">
+                                <h3 class="card-title">Reporte De Ventas</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <?php if($prods){ ?>
+
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>FECHA</th>
+                                            <th>CLIENTE</th>
+                                            <th>PRODUCTO</th>
+                                            <th>FOTO</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php 
+                    //RECORRIDO DE ELEMENTOS DE FORMA REPETITIVA
+                    foreach ($prods as $rows) {
+                                          
+                    ?>
+                                        <tr>
+                                            <td><?php echo $rows["fechac"]; ?></td>
+                                            <td><?php echo $rows["nombrec"]; ?></td>
+                                            <td><?php echo $rows["nombre"]; ?></td>
+                                            <td><img src="../<?php echo $rows['foto1']; ?>" width="50"></td>
+                                        </tr>
+                                        <?php 
+                    }//FIN CICLO REPETITIVO DE DATOS
+                    ?>
+                                    </tbody>
+
+                                </table>
+                                <?php 
+              }else{
+                echo "<div class='alert alert-secondary'>
+                      No hay datos de productos. Registre uno<br>
+                      <a href='registrar_productos.php' class='btn btn-info' >Registro</a> 
+                      </div>
+                      ";
+              }
+                 ?>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+
+                    </div><!-- Fin contenido TABLA DE DATO -->
+                </div>
+
 
             </section>
             <!-- /.content -->

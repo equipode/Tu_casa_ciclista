@@ -1,5 +1,5 @@
 <?php
 	
-	$mysqli = new mysqli("localhost", "root", "dayana2004", "db_tienda_ciclista");
+	$mysqli = new mysqli("localhost", "root", "123456789", "db_tienda_ciclista");
 	
 ?>

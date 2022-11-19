@@ -3,7 +3,6 @@
 ?>
 <!DOCTYPE html>
 <html>
-
 <?php 
                         $objDB = new ExtraerDatos();
 
@@ -13,7 +12,6 @@
                         $comprasDetalle = $objDB->comprasDetalle($idp);
                         
                         ?>
-
 <head>
     <title>Compras</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,13 +25,10 @@
     <link rel="stylesheet" href="../templates/AdminLTE-3.0.5/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-
     <link href="../CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
-
     <?php include "includes2/config.php"; ?>
 
     <!-- Site wrapper -->
@@ -78,15 +73,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-
-
-
                             <!-- Main content -->
                             <div class="invoice p-3 mb-3">
                                 <!-- title row -->
                                 <div class="row">
                                     <div class="col-12">
-
                                         <h4>
                                             <i class="fas fa-bicycle"></i><b> Tu casa ciclista L.T.D.A</b>
                                             <small class="float-right"><b>Fecha: </b>
@@ -129,14 +120,12 @@
                                     <!-- /.col -->
                                 </div>
                                 <!-- /.row -->
-
                                 <!-- Table row -->
                                 <div class="row">
                                     <div class="col-12 table-responsive">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-
                                                     <th>Producto</th>
                                                     <th>Serial #</th>
                                                     <th>Descripción</th>
@@ -145,7 +134,6 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-
                                                     <td><?php echo $comprasDetalle[0]['nombre'] ?></td>
                                                     <td><?php echo $comprasDetalle[0]['referencia'] ?></td>
                                                     <td><?php echo $comprasDetalle[0]['descripcioncorta'] ?></td>
@@ -158,7 +146,6 @@
                                     <!-- /.col -->
                                 </div>
                                 <!-- /.row -->
-
                                 <div class="row">
                                     <!-- accepted payments column -->
                                     <div class="col-6">
@@ -167,15 +154,12 @@
                                         <img src="../imgs/credit/mastercard.png" alt="Mastercard">
                                         <img src="../imgs/credit/american-express.png" alt="American Express">
                                         <img src="../imgs/credit/paypal2.png" alt="Paypal">
-
                                         <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-
                                         </p>
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-6">
                                         <p class="lead"><b>Fecha: </b><?php echo $comprasDetalle[0]['fechac'] ?></p>
-
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <tr>
@@ -187,19 +171,15 @@
                                                     <td>$<?php 
                         $valor = $comprasDetalle[0]['valorcomercial']; 
                         $iva = ($valor * 19) / 100;
-
                         echo $iva;
                         ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Total:</th>
                                                     <td>$ <?php
-
                                                     $total = $valor + $iva;
                                                     echo $total;
-
                                                       ?>
-
                                                     </td>
                                                 </tr>
                                             </table>
@@ -208,7 +188,6 @@
                                     <!-- /.col -->
                                 </div>
                                 <!-- /.row -->
-
                                 <!-- this row will not appear when printing -->
                                 <div class="row no-print">
                                     <div class="col-12">
@@ -217,7 +196,6 @@
                                             Imprimir</a>
                                         <button type="button" class="btn btn-success float-right"><i
                                                 class="far fa-credit-card"></i> Pagar
-
                                         </button>
                                         <button type="button" class="btn btn-primary float-right"
                                             style="margin-right: 5px;">
@@ -230,21 +208,15 @@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
-
-
-
-
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
         <footer class="main-footer">
             <?php 
       include "includes2/footer.php";
      ?>
         </footer>
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -252,7 +224,6 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
     <script type="text/javascript">
     window.addEventListener("lo", window.print());
     </script>

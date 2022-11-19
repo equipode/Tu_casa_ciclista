@@ -111,12 +111,22 @@
                                                                 values($monbre, $pro, NOW()) ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
-                echo "<div class='alert alert-success'>
-                         Se ha verificado al usuario, selecciona continuar
-                      </div>";
+                echo "
+                <audio controls='' autoplay='' id='ocultar'>
+                <source src='../Audios/sony1.mp3' type='audio/mp3'>
+                </audio>
+                <div class='alert alert-success'>
+                         usuario verificado
+                      </div>
+                      ";
               }else{ // Algo paso mal
-                echo "<div class='alert alert-danger'>
-                         Debe selecionar su usuario
+                echo "
+                <audio controls='' autoplay='' id='ocultar'>
+                <source src='../Audios/sony2.mp3' type='audio/mp3'>
+                </audio>
+            
+                <div class='alert alert-danger'>
+                         Debe selecionar un usuario
                       </div>";
               }
 

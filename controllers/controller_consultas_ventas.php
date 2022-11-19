@@ -14,16 +14,12 @@ class ConsultasDB extends DBConfig {
 		return $records;				
 	}
 }
-
-
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
 */
 class ExtraerDatos extends ConsultasDB
 {
-
-	
-	//MUESTRA LISTADO DE CLIENTES
+	//MUESTRA EL ULTIMO RESULTADO DE LA TABLA
 	function listadoVentas($start=0, $regsCant = 0){
 		$sql = "SELECT  iv.cod, c.nombrec, p.foto1 , p.nombre, p.descripcion
 		FROM info_venta AS iv
@@ -32,7 +28,7 @@ class ExtraerDatos extends ConsultasDB
 		WHERE iv.cod=(SELECT max(cod) FROM info_venta)";
 
 		if ($regsCant > 0 )
-			 $sql = "SELECT  iv.cod, c.nombrec, p.nombre
+			 $sql = "SELECT  iv.cod, c.nombrec, p.foto1 , p.nombre, p.descripcion
 			 FROM info_venta AS iv
 			 INNER JOIN info_clientes AS c ON iv.cliente=c.id
 			 INNER JOIN info_productos AS p ON iv.fk_product=p.cod
@@ -41,7 +37,7 @@ class ExtraerDatos extends ConsultasDB
 		return $lista;
 	}
 
-	// DETALLE DE CLIENTES SELECCIONADA SEGUN ID
+	// DETALLE DE CADA VENTA
 	function comprasDetalle($idp){
 		$sql = "SELECT  iv.cod, iv.fechac, c.nombrec, c.ciudad, c.direccion, c.telefono, c.usuario, p.nombre, p.referencia, p.descripcioncorta, p.valorcomercial
 		FROM info_venta AS iv
@@ -51,14 +47,6 @@ class ExtraerDatos extends ConsultasDB
 		$lista = $this->consulta_generales($sql);	
 		return $lista;
 	}
-
-	
-	// ****************************************************************************
-	// Agregue aqui debajo el resto de Funciones - Se ha dejado  Listado y detalle
-	// ****************************************************************************
-
-	
-
 	
 }//fin CLASE
 
