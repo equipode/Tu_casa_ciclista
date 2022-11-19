@@ -1,6 +1,6 @@
 function tiempoReal() {
     var tabla = $.ajax({
-        url: '../JQUERY/tablaConsulta.php',
+        url: '../JQUERY/tabla.php',
         dataType: 'text',
         async: false
     }).responseText;
