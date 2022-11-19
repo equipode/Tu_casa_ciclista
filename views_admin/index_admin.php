@@ -212,13 +212,7 @@ include "../controllers/controller_consultas_admin.php";
 
 
 
-                <?php
-  $objDB = new ExtraerDatos();
-
-  $prods = array();
-  $prods = $objDB->listadodVentas();
-
-?>
+               
 
                 <div class="row">
                     <!-- COLUMNA DE TABLA DE DATOS  -->
@@ -231,7 +225,7 @@ include "../controllers/controller_consultas_admin.php";
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body p-0">
-                                <?php if($prods){ ?>
+                        
 
                                 <table class="table table-striped">
                                     <thead>
@@ -243,33 +237,15 @@ include "../controllers/controller_consultas_admin.php";
                                         </tr>
                                     </thead>
 
-                                    <tbody>
-                                        <?php 
-                    //RECORRIDO DE ELEMENTOS DE FORMA REPETITIVA
-                    foreach ($prods as $rows) {
-                                          
-                    ?>
-                                        <tr>
-                                            <td><?php echo $rows["fechac"]; ?></td>
-                                            <td><?php echo $rows["nombrec"]; ?></td>
-                                            <td><?php echo $rows["nombre"]; ?></td>
-                                            <td><img src="../<?php echo $rows['foto1']; ?>" width="50"></td>
-                                        </tr>
-                                        <?php 
-                    }//FIN CICLO REPETITIVO DE DATOS
-                    ?>
+                                    <tbody id="miTabla">
+                                
+                                        
+                
+                    
                                     </tbody>
 
                                 </table>
-                                <?php 
-              }else{
-                echo "<div class='alert alert-secondary'>
-                      No hay datos de productos. Registre uno<br>
-                      <a href='registrar_productos.php' class='btn btn-info' >Registro</a> 
-                      </div>
-                      ";
-              }
-                 ?>
+                                
 
                             </div>
                             <!-- /.card-body -->
@@ -300,6 +276,8 @@ include "../controllers/controller_consultas_admin.php";
 
     <!-- Graficos-->
 
+<script src="../scripts/jquery-3.6.1.js"></script>
+<script src="../scripts/tabla.js"></script>
 
     <!-- jQuery -->
     <script src="../templates/AdminLTE-3.0.5/plugins/jquery/jquery.min.js"></script>
