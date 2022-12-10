@@ -92,6 +92,8 @@ $nombre = $_SESSION['nombre'];
                             <!-- Para controles de formularios siempre usar etiqueta FORM -->
 
                             <?php 
+           
+
             if(isset($_POST["txt_refer"])){//verificar la existencia de envio de datos
 
               $refer = $_POST["txt_refer"];
@@ -100,6 +102,10 @@ $nombre = $_SESSION['nombre'];
               $descor = $_POST["txt_Descor"];
               $canti = $_POST["txt_cantEx"];
               $vlrcm = $_POST["txt_vlrCom"];
+              $fecha = $_POST["txt_fecha"];
+
+              $fech = new fechas();
+              $fecha_sql =  $fech->fecha($fecha);
 
 
 
@@ -275,7 +281,7 @@ $nombre = $_SESSION['nombre'];
               $objDBO->conexion();
 
               $ejecucion = $objDBO->Operaciones("INSERT INTO info_productos(referencia, nombre, descripcion, descripcioncorta, cantidad, valorcomercial, foto1, foto2, foto3, foto4, foto5, fecha, hora) 
-                                                                values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', '$fotop2', '$fotop3', '$fotop4', '$fotop5', NOW(), NOW() - 5 )  ");
+                                                                values('$refer', '$nombr', '$descr', '$descor', $canti, $vlrcm, '$fotop', '$fotop2', '$fotop3', '$fotop4', '$fotop5', '$fecha_sql', NOW() - 5 )  ");
 
               if($ejecucion){ // Todo se ejecuto correctamente
                 echo "
@@ -365,7 +371,7 @@ $nombre = $_SESSION['nombre'];
                                         <div class="col-md-6 col-sm-6 col-6">
                                             <div class="form-group">
                                                 <label for="txt_vlrCom">Fecha</label>
-                                                <input type="text" class="form-control" id="txt_fecha" name="txt_fecha"
+                                                <input type="date" class="form-control" id="txt_fecha" name="txt_fecha"
                                                     placeholder="Fecha y hora automatica">
                                             </div>
                                         </div>

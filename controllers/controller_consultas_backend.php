@@ -17,8 +17,10 @@ class ConsultasDB extends DBConfig {
 /**
 * IMPLEMENTACION DE ACCESO A CONSULTAS PARA PROTEGER MAS LA VISTA
 */
+
 class ExtraerDatos extends ConsultasDB
 {
+	
 	//MUESTRA LISTADO DE CLIENTES
 	function listadoclientes($start=0, $regsCant = 0){
 		$sql = "SELECT * FROM info_clientes";
@@ -105,5 +107,13 @@ class ExtraerDatos extends ConsultasDB
 	}
 	
 }//fin CLASE
+
+class fechas{
+	function fecha($fecha){
+		$f = explode('/', $fecha);
+		$fecha_sql = $f[0]."-".$f[1]."-".$f[2];
+		return $fecha_sql;
+	  }
+}
 
 ?>
